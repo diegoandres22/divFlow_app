@@ -1,63 +1,53 @@
 import Card from "./Card";
+import Brand from "../Buttons/Brand";
 
-const plans = [
+const apps = [
     {
-        name: "Automatización",
-        price: "Desde USD 400",
-        period: "/ proyecto",
-        description: "Un flujo puntual en n8n conectando tus herramientas.",
+        name: "DivFlow Ecommerce",
+        price: "USD 49",
+        period: "/ mes",
+        description: "Tienda online lista para vender: catálogo, carrito, checkout y panel de pedidos, sin desarrollar nada desde cero.",
         features: [
-            "1 a 3 flujos automatizados",
-            "Conexión con tus apps actuales (CRM, Sheets, WhatsApp, etc.)",
-            "Entrega en 1-2 semanas",
-            "Documentación del flujo",
-        ],
-        highlighted: false,
-        ctaLabel: "Empezar",
-    },
-    {
-        name: "Integración a medida",
-        price: "Desde USD 1.200",
-        period: "/ proyecto",
-        description: "Varios sistemas conectados y procesos internos optimizados.",
-        features: [
-            "Hasta 8 flujos automatizados",
-            "Integraciones con APIs propias o de terceros",
-            "Panel de monitoreo básico",
-            "Entrega en 3-6 semanas",
-            "1 mes de soporte incluido",
+            "Catálogo de productos ilimitado",
+            "Carrito y checkout integrados",
+            "Panel simple para gestionar pedidos",
+            "Alta en menos de 48hs",
+            "Soporte y actualizaciones incluidas",
         ],
         highlighted: true,
-        ctaLabel: "Solicitar propuesta",
-    },
-    {
-        name: "SaaS a medida",
-        price: "A cotizar",
-        period: "",
-        description: "Tu producto construido de punta a punta, listo para escalar.",
-        features: [
-            "Diseño, desarrollo y despliegue completo",
-            "Automatizaciones integradas desde el día uno",
-            "Arquitectura escalable en la nube",
-            "Soporte y evolución continua",
-        ],
-        highlighted: false,
-        ctaLabel: "Agendar llamada",
+        ctaLabel: "Quiero alquilarla",
+        demoUrl: "https://divflowecommerce.vercel.app/",
     },
 ];
 
 const Cards = () => {
     return (
         <section className="pricing-section w-full p-8 mt-16 mb-20">
-            <p className="text-[.7rem] font-bold text-[#eae5dd]">Planes</p>
-            <h2 className="text-[#F5F0EA] lg:text-[4rem] text-[2.2rem] font-medium tracking-tighter mt-2 mb-12 leading-[1.05]">
-                Elegí el nivel de<br />automatización que necesitás
+            <p className="text-[.7rem] font-bold text-[#eae5dd]">Apps listas para usar</p>
+            <h2 className="text-[#F5F0EA] lg:text-[4rem] text-[2.2rem] font-medium tracking-tighter mt-2 mb-4 leading-[1.05]">
+                Alquilá una app que<br />ya está funcionando
             </h2>
+            <p className="text-[#C9A68C] text-[0.9rem] max-w-lg mb-12">
+                En vez de esperar semanas por un desarrollo a medida, arrancá hoy con una de nuestras apps ya construidas, por una suscripción mensual económica. Vas viendo la demo antes de decidir.
+            </p>
 
             <div className="w-full flex lg:flex-row flex-col gap-6">
-                {plans.map((plan, i) => (
-                    <Card key={i} {...plan} />
+                {apps.map((app, i) => (
+                    <Card key={i} {...app} />
                 ))}
+
+                <div className="relative w-full lg:w-1/3 rounded-[2.5rem] p-8 flex flex-col justify-center items-start bg-[#1A120D] border border-dashed border-[#2a1f17]">
+                    <h3 className="text-[#F5F0EA] text-xl font-bold mb-2">Próximamente más apps</h3>
+                    <p className="text-[#C9A68C] text-[0.85rem] mb-6">
+                        Estamos sumando nuevas apps al catálogo de <Brand />. Si necesitás algo puntual, contanos y lo evaluamos.
+                    </p>
+                    <a
+                        href="#contact"
+                        className="rounded-full py-3 px-6 text-[0.85rem] font-bold border border-[#C9A68C] text-[#C9A68C] hover:bg-[#C9A68C] hover:text-[#1A120D] transition-colors duration-300"
+                    >
+                        Contarnos qué necesitás
+                    </a>
+                </div>
             </div>
         </section>
     );

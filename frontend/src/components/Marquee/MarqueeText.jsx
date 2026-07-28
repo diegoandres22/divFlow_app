@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './marqueetext.css';
+import Brand from '../Buttons/Brand';
 
 const MarqueeText = () => {
     const animationRef = useRef(null);
@@ -85,7 +86,7 @@ const MarqueeText = () => {
     // Create multiple marquee items
     const marqueeItems = Array(6).fill(null).map((_, index) => (
         <div key={index} className="marquee-text-marquee">
-            <h1>Why Capsules®?<span className='star-rotate'>*</span></h1>
+            <h1>¿Por qué <Brand />?<span className='star-rotate'>*</span></h1>
         </div>
     ));
 

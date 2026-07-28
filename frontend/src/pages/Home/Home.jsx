@@ -12,6 +12,7 @@ import Showcase from '../../components/Showcase/Showcase'
 import Feedback from '../../components/Feedback/Feedback'
 import FooterBanner from '../../components/FooterBanner/FooterBanner'
 import Cards from '../../components/Cards/Cards'
+import Contact from '../../components/Contact/Contact'
 
 const Home = () => {
     return (
@@ -27,6 +28,7 @@ const Home = () => {
             <Showcase />
             <Cards />
             <Feedback />
+            <Contact />
             <FooterBanner />
         </div >
     )

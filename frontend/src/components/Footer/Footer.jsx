@@ -4,11 +4,12 @@ import { CiLinkedin } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
 
 import MarqueeText from '../Marquee/MarqueeText';
+import Brand from '../Buttons/Brand';
 
 const Footer = () => {
     return (
         <section className='w-screen h-dvh px-6 mt-10'>
-            <p className='text-[.7rem] text-[#eae5dd] choose-subtitle mt-10'>¿Listo para automatizar tu operación?<br />Hablemos de tu proyecto en DivFlow<span>®</span></p>
+            <p className='text-[.7rem] text-[#eae5dd] choose-subtitle mt-10'>¿Listo para automatizar tu operación?<br />Hablemos de tu proyecto en <Brand />®</p>
             <div>
                 <MarqueeText />
             </div>
@@ -18,7 +19,7 @@ const Footer = () => {
                     automatizamos procesos con n8n<br />
                     para equipos que quieren crecer.<br /><br />
                     Si tenés un proyecto en mente—<br />
-                    <a href="#" className='text-[#F5F0EA] hover:text-[#F0B08C] underline'>contactanos.</a>
+                    <a href="#contact" className='text-[#F5F0EA] hover:text-[#F0B08C] underline'>contactanos.</a>
                 </h3>
 
                 <div className='flex flex-col justify-center items-end'>
@@ -26,7 +27,7 @@ const Footer = () => {
                     <a href="#welcome" className='text-[#f2ede5] text-2xl'>Servicios</a>
                     <a href="#welcome" className='text-[#f2ede5] text-2xl'>Casos de uso</a>
                     <a href="#welcome" className='text-[#f2ede5] text-2xl'>Por qué DivFlow</a>
-                    <a href="#welcome" className='text-[#f2ede5] text-2xl'>Planes</a>
+                    <a href="#welcome" className='text-[#f2ede5] text-2xl'>Apps</a>
                     <a href="#welcome" className='text-[#f2ede5] text-2xl'>Testimonios</a>
                 </div>
             </div>
@@ -41,7 +42,7 @@ const Footer = () => {
 
                 <div>
                     <p className="text-[0.8rem] text-[#C9A68C] text-right">
-                        DivFlow—software a medida y<br />
+                        <Brand />—software a medida y<br />
                         automatizaciones con n8n.
                     </p>
                 </div>

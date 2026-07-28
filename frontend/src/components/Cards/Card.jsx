@@ -1,14 +1,14 @@
-const Card = ({ name, price, period, description, features, highlighted, ctaLabel }) => {
+const Card = ({ name, price, period, description, features, highlighted, ctaLabel, demoUrl }) => {
     return (
         <div
             className={`relative w-full lg:w-1/3 rounded-[2.5rem] p-8 flex flex-col justify-between ${highlighted
                     ? "bg-[#1D140F] border-2 border-[#E8734A]"
-                    : "bg-[#1A120D] border border-[#1a2f28]"
+                    : "bg-[#1A120D] border border-[#2a1f17]"
                 }`}
         >
             {highlighted && (
-                <span className="absolute top-6 right-8 bg-[#E8734A] text-[#04342C] text-[0.65rem] font-bold px-3 py-1 rounded-full">
-                    Más elegido
+                <span className="absolute top-6 right-8 bg-[#E8734A] text-[#1A120D] text-[0.65rem] font-bold px-3 py-1 rounded-full">
+                    Disponible ya
                 </span>
             )}
 
@@ -31,15 +31,27 @@ const Card = ({ name, price, period, description, features, highlighted, ctaLabe
                 </ul>
             </div>
 
-            <a
-                href="#"
-                className={`w-full text-center rounded-full py-3 text-[0.85rem] font-bold transition-colors duration-300 ${highlighted
-                        ? "bg-[#E8734A] text-[#04342C] hover:bg-[#25b585]"
-                        : "border border-[#C9A68C] text-[#C9A68C] hover:bg-[#C9A68C] hover:text-[#1A120D]"
-                    }`}
-            >
-                {ctaLabel}
-            </a>
+            <div className="flex flex-col gap-3">
+                {demoUrl && (
+                    <a
+                        href={demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full text-center rounded-full py-3 text-[0.85rem] font-bold border border-[#C9A68C] text-[#C9A68C] hover:bg-[#C9A68C] hover:text-[#1A120D] transition-colors duration-300"
+                    >
+                        Ver demo
+                    </a>
+                )}
+                <a
+                    href="#contact"
+                    className={`w-full text-center rounded-full py-3 text-[0.85rem] font-bold transition-colors duration-300 ${highlighted
+                            ? "bg-[#E8734A] text-[#1A120D] hover:bg-[#f08a63]"
+                            : "bg-[#F5F0EA] text-[#1A120D] hover:bg-[#e0d8cd]"
+                        }`}
+                >
+                    {ctaLabel}
+                </a>
+            </div>
         </div>
     );
 };

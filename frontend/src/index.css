@@ -126,13 +126,6 @@ body {
 	border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.hero-bg-img {
-	background-image: url("./assets/cap1.png");
-	background-repeat: no-repeat;
-	object-fit: cover;
-	/* background-position: center; */
-}
-
 /* --------------- Welcome Section Styles -------------- */
 
 .text-darkBrown {

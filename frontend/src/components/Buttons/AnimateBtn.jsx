@@ -1,10 +1,10 @@
 import "./revbtn.css";
 
-const AnimateBtn = (props) => {
+const AnimateBtn = ({ btnName, href = "#" }) => {
     return (
         <div className="link-line">
-            <a href="#" className="rev-link rev-top text-[12px]">{props.btnName}</a>
-            <a href="#" className="rev-link text-[12px]">{props.btnName}</a>
+            <a href={href} className="rev-link rev-top text-[12px]">{btnName}</a>
+            <a href={href} className="rev-link text-[12px]">{btnName}</a>
         </div>
     )
 }

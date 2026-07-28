@@ -115,42 +115,42 @@ const StickyCols = () => {
                 </div>
                 <div className="col col-3">
                     <div className="col-content-wrapper">
-                        <h1 className="text-2xl font-bold leading-auto">Enjoy the view
+                        <h1 className="text-2xl font-bold leading-auto">Trazabilidad
                             <br />
-                            through—the wide
+                            completa en—cada
                             <br />
-                            panoramic glass
+                            paso del flujo
                             <br />
-                            window
+                            automatizado
                         </h1>
                         <div className={`col-content-para flex items-center gap-4 justify-between ${reveal ? "ml-0" : "ml-6"}`}>
                             <div className="flex items-center gap-0 justify-center">
                                 <h3 className="border-1 px-3 py-1 rounded-full text-[#aaa091]">{(reveal) ? "3" : "2"}</h3>
                                 <h3 className="border-1 px-3 py-1 rounded-full text-[#524e4b]">3</h3>
                             </div>
-                            <p className="text-[12px] font-medium"> Get closer to the desert nature than ever before
+                            <p className="text-[12px] font-medium"> Sabés qué pasó, cuándo y por qué
                                 <br />
-                                and admire this unique, breathtaking landscape.
+                                sin depender de nadie para entenderlo.
                             </p>
                         </div>
                     </div>
                     <div className="col-content-wrapper-2">
-                        <h1 className="text-2xl font-bold leading-auto">Enjoy the view
+                        <h1 className="text-2xl font-bold leading-auto">Trazabilidad
                             <br />
-                            through—the wide
+                            completa en—cada
                             <br />
-                            panoramic glass
+                            paso del flujo
                             <br />
-                            window
+                            automatizado
                         </h1>
                         <div className="col-content-para flex items-center gap-4 justify-between">
                             <div className="flex items-center gap-0 justify-center">
                                 {/* <h3 className="border-1 px-3 py-1 rounded-full text-[#aaa091]">3</h3>
                                 <h3 className="border-1 px-3 py-1 rounded-full text-[#524e4b]">3</h3> */}
                             </div>
-                            <p className={`text-[12px] font-medium  ${!reveal ? "mr-0" : "mr-6"}`}> Get closer to the desert nature than ever before
+                            <p className={`text-[12px] font-medium  ${!reveal ? "mr-0" : "mr-6"}`}> Sabés qué pasó, cuándo y por qué
                                 <br />
-                                and admire this unique, breathtaking landscape.
+                                sin depender de nadie para entenderlo.
                             </p>
                         </div>
                     </div>
@@ -158,7 +158,7 @@ const StickyCols = () => {
                 <div className="col col-4">
                     <div className="col-img col-img-1">
                         <div className="col-img-wrapper">
-                            <img src={colimg1} alt="img" />
+                            <img src={colimg3} alt="img" />
                         </div>
                     </div>
                 </div>

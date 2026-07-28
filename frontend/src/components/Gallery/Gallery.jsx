@@ -3,9 +3,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './gallery.css';
 import { BsFillPlusCircleFill } from "react-icons/bs";
+import Brand from "../Buttons/Brand";
 
 import gbg1 from '../../assets/background1.png';
-import gbg2 from '../../assets/background2.png';
+import gbg2 from '../../assets/background2.jpg';
 import gbg3 from '../../assets/background3.png';
 import gbg4 from '../../assets/background4.png';
 
@@ -96,13 +97,13 @@ const Gallery = () => {
         };
     }, []);
 
-    // Generate repeating Capsules® elements
+    // Generate repeating DivFlow® elements
     const generateCapsules = (quantity = 6) => {
         const capsules = [];
         for (let i = 1; i <= quantity; i++) {
             capsules.push(
                 <h3 key={i} style={{ "--index": i }} className='tracking-tighter'>
-                    DivFlow®
+                    <Brand />®
                 </h3>
             );
         }
@@ -129,7 +130,7 @@ const Gallery = () => {
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
                         <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
-                        <h3>Un flujo en n8n que capta leads, los califica y los carga <br /> directo en tu CRM sin que nadie toque una celda</h3>
+                        <h3>Despertás, y tu pipeline ya creció solo <br /> mientras vos dormías</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
                         <div className="progress-line absolute z-10 bg-[#E8734A] w-[33%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>

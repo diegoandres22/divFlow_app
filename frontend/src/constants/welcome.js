@@ -1,5 +1,5 @@
 export const welcomeLinesLG = [
-    "Bienvenido a DivFlow, el estudio donde",
+    "Bienvenido a <Div>Flow, el estudio donde",
     "construimos software a medida y",
     "automatizamos tus procesos con n8n,",
     "para que tu equipo se enfoque en crecer",
@@ -8,7 +8,7 @@ export const welcomeLinesLG = [
 ];
 export const welcomeLinesSM = [
     "Bienvenido a",
-    "DivFlow, el estudio",
+    "<Div>Flow, el estudio",
     "donde construimos",
     "software a medida",
     "y automatizamos",
@@ -24,10 +24,10 @@ export const welcomeLinesSM = [
 
 export const chooseLinesLG =[
     "Por qué elegir",
-    "a DivFlow"
+    "a <Div>Flow"
 ];
 export const chooseLinesSM =[
     "Por qué",
     "elegir a",
-    "DivFlow"
+    "<Div>Flow"
 ];

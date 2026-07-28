@@ -126,7 +126,7 @@ export default function PreloaderII() {
             <div className="preloader-progress">
                 <div className="preloader-progress-bar"></div>
                 <div className="preloader-logo">
-                    <h1>DivFlow</h1>
+                   <div>&lt;h1&gt;DivFlow</div>
                 </div>
             </div>
 

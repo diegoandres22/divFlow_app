@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap, { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 import { chooseLinesLG, chooseLinesSM } from "../../constants/welcome";
+import Brand from "../Buttons/Brand";
 
 const Choose = () => {
 
@@ -61,7 +62,7 @@ const Choose = () => {
 
     return (
         <section className="choose-section w-full h-dvh p-8 pt-10">
-            <p className='text-[.7rem] text-[#eae5dd] choose-subtitle'>Conocé DivFlow<span>®</span></p>
+            <p className='text-[.7rem] text-[#eae5dd] choose-subtitle'>Conocé <Brand />®</p>
             <div className="lg:mt-10 mt-7 title-part origin-bottom ">
                 {
                     chooseLines.map((line, index) => (

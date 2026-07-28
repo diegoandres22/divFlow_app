@@ -1,6 +1,7 @@
 import gsap from "gsap/all";
 import smoke from "../../assets/smoke_final.mp4";
 import robotHeroBg from "../../assets/robot-1.jpg"
+import Brand from "../Buttons/Brand";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 
@@ -65,7 +66,7 @@ const Hero = () => {
                             className="text-[#F5F0EA] text-start text-6xl md:text-9xl font-bold tracking-wider lg:absolute  lg:left-2"
                             style={{ textShadow: '2px 2px 4px #aaa' }}
                         >
-                            DivFlow
+                            <Brand />
                         </h1>
 
                         <div className="w-full h-auto absolute  top-24 md:bottom-[8%] lg:bottom-[9%] flex md:flex-row flex-col md:justify-between md:items-end">

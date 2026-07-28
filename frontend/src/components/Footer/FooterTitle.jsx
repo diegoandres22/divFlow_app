@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useRef } from 'react';
 
 import "./footertitle.css";
+import Brand from "../Buttons/Brand";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -84,7 +85,7 @@ const FooterTitle = () => {
 
             <div className='footer-title w-full text-center'>
                 <h1 className='text-[18vw] font-bold'>
-                    DivFlow
+                    <Brand />
                 </h1>
             </div>
         </section>

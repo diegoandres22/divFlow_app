@@ -4,6 +4,7 @@ import StickyCols from "../StickyCols/StickyCols";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Brand from "../Buttons/Brand";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,9 +36,9 @@ const MarqueeSticky = () => {
             <div className="pin-con relative">
                 <div className="pl-8">
                     <p className="text-[0.7rem] text-[#eae5dd] choose-subtitle">
-                        Want to learn more about
+                        ¿Querés conocer más sobre
                         <br />
-                        the benefits of—Capsules<span>®</span>?
+                        los beneficios de—<Brand />®?
                     </p>
                 </div>
 
