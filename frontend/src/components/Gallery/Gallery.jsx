@@ -31,7 +31,7 @@ const Gallery = () => {
 
         // Add background color animation
         tl4.to(".gallery-page4", {
-            backgroundColor: "#08110E",
+            backgroundColor: "#120D0A",
         }, 'start');
 
         gsap.set(".gallery-topText h4, .gallery-topText h3, .gallery-bottomText h3", {
@@ -128,11 +128,11 @@ const Gallery = () => {
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
-                        <BsFillPlusCircleFill className='w-8 h-8 text-[#6FBE9C]' />
+                        <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
                         <h3>Un flujo en n8n que capta leads, los califica y los carga <br /> directo en tu CRM sin que nadie toque una celda</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
-                        <div className="progress-line absolute z-10 bg-[#1D9E75] w-[33%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                        <div className="progress-line absolute z-10 bg-[#E8734A] w-[33%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                     </div>
                 </div>
             </div>
@@ -145,11 +145,11 @@ const Gallery = () => {
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
-                        <BsFillPlusCircleFill className='w-8 h-8 text-[#6FBE9C]' />
+                        <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
                         <h3>Conectamos tus herramientas para que la información viaje <br /> sola entre sistemas, sin duplicados ni planillas manuales</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
-                        <div className="progress-line absolute z-10 bg-[#1D9E75] w-[67%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                        <div className="progress-line absolute z-10 bg-[#E8734A] w-[67%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                     </div>
                 </div>
             </div>
@@ -162,11 +162,11 @@ const Gallery = () => {
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
-                        <BsFillPlusCircleFill className='w-8 h-8 text-[#6FBE9C]' />
+                        <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
                         <h3>Tu producto, construido desde cero: dashboard, base de <br /> datos y lógica de negocio, listo para escalar</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
-                        <div className="progress-line absolute z-10 bg-[#1D9E75] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                        <div className="progress-line absolute z-10 bg-[#E8734A] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                     </div>
                 </div>
             </div>

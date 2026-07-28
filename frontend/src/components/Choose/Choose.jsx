@@ -65,14 +65,14 @@ const Choose = () => {
             <div className="lg:mt-10 mt-7 title-part origin-bottom ">
                 {
                     chooseLines.map((line, index) => (
-                        <h1 key={index} className={`choose-heading text-[#EAF6F1] lg:text-[9.5rem] text-[3rem] leading-[0.9]`} font-medium tracking-tighter choose-title>
+                        <h1 key={index} className={`choose-heading text-[#F5F0EA] lg:text-[9.5rem] text-[3rem] leading-[0.9]`} font-medium tracking-tighter choose-title>
                             <span className={`choose-title-break ${index == 1 ? "lg:pb-3 pb-2" : ""}`}>{line}<span className={`choose-title-clip ${index == 1 ? "lg:pb-3 pb-2" : ""}`}>{line}</span></span>
                         </h1>
                     ))
                 }
             </div>
             <div className="choose-sec w-full flex lg:flex-row flex-col justify-center items-start gap-10 lg:mt-0">
-                <div className='lg:w-1/2 w-full text-[#6FBE9C] lg:text-[2rem] text-[1rem] md:leading-[1.1] lg:mt-0 mt-8 lg:pr-16'>
+                <div className='lg:w-1/2 w-full text-[#C9A68C] lg:text-[2rem] text-[1rem] md:leading-[1.1] lg:mt-0 mt-8 lg:pr-16'>
                     <p>Diseñamos software y automatizaciones a medida de tu operación. Cada proyecto se construye con los más altos estándares de calidad, escalabilidad y seguridad, adaptado a tus necesidades reales.</p>
                 </div>
                 <div className='lg:w-1/2 w-full'>
@@ -81,22 +81,22 @@ const Choose = () => {
                             en DivFlow comparte estos principios:</p>
                     </div>
                     <div className="flex flex-1 flex-wrap justify-start items-start gap-2 mt-8">
-                        <div className="border-[1px] border-[#6FBE9C] text-[#6FBE9C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
+                        <div className="border-[1px] border-[#C9A68C] text-[#C9A68C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
                             Escalable
                         </div>
-                        <div className="border-[1px] border-[#EAF6F1] text-[#EAF6F1] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
+                        <div className="border-[1px] border-[#F5F0EA] text-[#F5F0EA] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
                             Seguro
                         </div>
-                        <div className="border-[1px] border-[#6FBE9C] text-[#6FBE9C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
+                        <div className="border-[1px] border-[#C9A68C] text-[#C9A68C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
                             Sin código
                         </div>
-                        <div className="border-[1px] border-[#EAF6F1] text-[#EAF6F1] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
+                        <div className="border-[1px] border-[#F5F0EA] text-[#F5F0EA] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
                             Integrable
                         </div>
-                        <div className="border-[1px] border-[#6FBE9C] text-[#6FBE9C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
+                        <div className="border-[1px] border-[#C9A68C] text-[#C9A68C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
                             Soporte 24/7
                         </div>
-                        <div className="border-[1px] border-[#EAF6F1] text-[#EAF6F1] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
+                        <div className="border-[1px] border-[#F5F0EA] text-[#F5F0EA] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
                             A medida
                         </div>
                     </div>

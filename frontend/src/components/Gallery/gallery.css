@@ -7,9 +7,9 @@
     /* background: linear-gradient(to top,
             #191813 0%,
             #191813 45%,
-            #08110E 50%,
-            #08110E 95%,
-            #08110E 100%); */
+            #120D0A 50%,
+            #120D0A 95%,
+            #120D0A 100%); */
 }
 
 .gallery-background img {
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #10231C;
+    background-color: #1D140F;
     transition: background-color 0.3s ease;
 }
 
@@ -51,7 +51,7 @@
     font-size: 10rem;
     width: 50rem;
     position: absolute;
-    color: #EAF6F1;
+    color: #F5F0EA;
     font-weight: 600;
     left: 100%;
     animation: gallery-animate var(--time) linear infinite;
@@ -89,7 +89,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #EAF6F1;
+    color: #F5F0EA;
     font-weight: 600;
     display: flex;
     justify-content: space-between;

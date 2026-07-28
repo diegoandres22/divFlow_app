@@ -50,7 +50,7 @@ const Cards = () => {
     return (
         <section className="pricing-section w-full p-8 mt-16 mb-20">
             <p className="text-[.7rem] font-bold text-[#eae5dd]">Planes</p>
-            <h2 className="text-[#EAF6F1] lg:text-[4rem] text-[2.2rem] font-medium tracking-tighter mt-2 mb-12 leading-[1.05]">
+            <h2 className="text-[#F5F0EA] lg:text-[4rem] text-[2.2rem] font-medium tracking-tighter mt-2 mb-12 leading-[1.05]">
                 Elegí el nivel de<br />automatización que necesitás
             </h2>
 

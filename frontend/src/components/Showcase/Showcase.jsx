@@ -75,7 +75,7 @@ const Showcase = () => {
             >
                 {/* Image 1 */}
                 <div className="relative flex-shrink-0 w-[80vw] h-full overflow-hidden">
-                    <div className="w-[77vw] absolute top-10 left-5 flex justify-between items-start text-[#EAF6F1]">
+                    <div className="w-[77vw] absolute top-10 left-5 flex justify-between items-start text-[#F5F0EA]">
                         <h1 className="text-3xl font-bold">CRM conectado<br /> a facturación</h1>
                         <p className="border-[1px] rounded-3xl px-2 py-1 text-center text-[0.7rem]">n8n</p>
                     </div>
@@ -85,9 +85,9 @@ const Showcase = () => {
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[77vw] absolute bottom-10 left-5 flex justify-between items-start ">
-                        <p className="text-[0.68rem] font-bold text-[#EAF6F1]">Cada venta cerrada genera la factura y actualiza el<br />stock automáticamente, sin intervención manual.</p>
+                        <p className="text-[0.68rem] font-bold text-[#F5F0EA]">Cada venta cerrada genera la factura y actualiza el<br />stock automáticamente, sin intervención manual.</p>
                         <div className="flex justify-center items-center">
-                            <p className="text-[#EAF6F1] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">01</p>
+                            <p className="text-[#F5F0EA] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">01</p>
                             <p className="text-[#4e484e] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const Showcase = () => {
 
                 {/* Image 2 */}
                 <div className="relative flex-shrink-0 w-[80vw] h-full overflow-hidden">
-                    <div className="w-[77vw] absolute top-10 left-5 flex justify-between items-start text-[#EAF6F1]">
+                    <div className="w-[77vw] absolute top-10 left-5 flex justify-between items-start text-[#F5F0EA]">
                         <h1 className="text-3xl font-bold">Soporte al<br />cliente 24/7</h1>
                         <p className="border-[1px] rounded-3xl px-2 py-1 text-center text-[0.7rem]">n8n + IA</p>
                     </div>
@@ -105,9 +105,9 @@ const Showcase = () => {
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[77vw] absolute bottom-10 left-5 flex justify-between items-start ">
-                        <p className="text-[0.68rem] font-bold text-[#EAF6F1]">Un bot clasifica consultas, responde las repetitivas y<br />escala al equipo humano solo cuando hace falta.</p>
+                        <p className="text-[0.68rem] font-bold text-[#F5F0EA]">Un bot clasifica consultas, responde las repetitivas y<br />escala al equipo humano solo cuando hace falta.</p>
                         <div className="flex justify-center items-center">
-                            <p className="text-[#EAF6F1] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">02</p>
+                            <p className="text-[#F5F0EA] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">02</p>
                             <p className="text-[#4e484e] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ const Showcase = () => {
 
                 {/* Image 3 */}
                 <div className="relative flex-shrink-0 w-[80vw] h-full overflow-hidden">
-                    <div className="w-[77vw] absolute top-10 left-5 flex justify-between items-start text-[#EAF6F1]">
+                    <div className="w-[77vw] absolute top-10 left-5 flex justify-between items-start text-[#F5F0EA]">
                         <h1 className="text-3xl font-bold">Dashboard en<br />tiempo real</h1>
                         <p className="border-[1px] rounded-3xl px-2 py-1 text-center text-[0.7rem]">Full-stack</p>
                     </div>
@@ -125,9 +125,9 @@ const Showcase = () => {
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[77vw] absolute bottom-10 left-5 flex justify-between items-start ">
-                        <p className="text-[0.68rem] font-bold text-[#EAF6F1]">Métricas de tu negocio centralizadas en un panel<br />propio, sin depender de hojas de cálculo dispersas.</p>
+                        <p className="text-[0.68rem] font-bold text-[#F5F0EA]">Métricas de tu negocio centralizadas en un panel<br />propio, sin depender de hojas de cálculo dispersas.</p>
                         <div className="flex justify-center items-center">
-                            <p className="text-[#EAF6F1] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
+                            <p className="text-[#F5F0EA] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                             <p className="text-[#4e484e] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                         </div>
                     </div>

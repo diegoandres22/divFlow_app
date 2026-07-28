@@ -34,7 +34,7 @@ const Feedback = () => {
                 </p>
 
                 <div>
-                    <h1 className='text-[#EAF6F1] text-7xl mt-4 mb-6'>
+                    <h1 className='text-[#F5F0EA] text-7xl mt-4 mb-6'>
                         {feedbackH1LG[index].map((line, i) => (
                             <span key={i}>
                                 {line}<br />
@@ -74,7 +74,7 @@ const Feedback = () => {
 
                     <div className="relative z-9 w-70 h-[0.1rem] bg-[#4f4b48]">
                         <div
-                            className="progress-line absolute z-10 bg-[#1D9E75] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"
+                            className="progress-line absolute z-10 bg-[#E8734A] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"
                             style={{ width: progressWidth }}
                         ></div>
                     </div>

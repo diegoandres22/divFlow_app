@@ -2,16 +2,16 @@
 @import "tailwindcss";
 
 :root {
-	--base-100: #08110E;
-	--base-200: #12201C;
+	--base-100: #120D0A;
+	--base-200: #1D140F;
 	--base-300: #F4F4F5;
-	--accent-emerald: #1D9E75;
-	--accent-coral: #F0997B;
+	--accent-primary: #E8734A;
+	--accent-secondary: #F0B08C;
 }
 
 html,
 body {
-	background-color: #08110E;
+	background-color: #120D0A;
 	scroll-behavior: smooth;
 	font-family: "Inter", sans-serif;
 	scroll-behavior: smooth;
@@ -136,7 +136,7 @@ body {
 /* --------------- Welcome Section Styles -------------- */
 
 .text-darkBrown {
-	color: #0E1F19;
+	color: #1A120D;
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -148,7 +148,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	color: #EAF6F1;
+	color: #F5F0EA;
 	clip-path: inset(0 0 100% 0);
 	white-space: nowrap;
 	transition: none;
@@ -165,18 +165,18 @@ body {
 /* -------------- Choose Section Styles ----------------- */
 .choose-section {
 	background: linear-gradient(to bottom,
-			#08110E 0%,
-			#08110E 50%,
-			#0C1815 65%,
-			#0C1815 75%,
-			#0C1815 85%,
-			#0C1815 90%,
-			/* #142720 95%, */
-			#10231C 100%);
+			#120D0A 0%,
+			#120D0A 50%,
+			#180F0A 65%,
+			#180F0A 75%,
+			#180F0A 85%,
+			#180F0A 90%,
+			/* #201510 95%, */
+			#1D140F 100%);
 }
 
 .choose-title-break {
-	color: #08110E;
+	color: #120D0A;
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -187,7 +187,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	color: #EAF6F1;
+	color: #F5F0EA;
 	clip-path: inset(100% 0 0 0);
 	white-space: wrap;
 	transition: none;
@@ -216,12 +216,12 @@ body {
 	}
 
 	.col h1 {
-		color: #6FBE9C;
+		color: #C9A68C;
 		width: 60%;
 	}
 
 	.col p {
-		color: #6FBE9C;
+		color: #C9A68C;
 		width: auto;
 	}
 
@@ -265,7 +265,7 @@ body {
 		position: relative;
 		width: 100%;
 		height: 100%;
-		background-color: #0E1F19;
+		background-color: #1A120D;
 		border-radius: 3rem;
 		overflow: hidden;
 	}

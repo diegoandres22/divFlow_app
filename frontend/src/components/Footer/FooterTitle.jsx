@@ -71,13 +71,13 @@ const FooterTitle = () => {
     return (
         <section ref={ftConRef} className='relative z-1 w-screen h-[40vh] border-1 border-t-[#c4c1b9]'>
             <div className='w-full flex justify-between items-center px-6 mt-8'>
-                <p className='text-[#6FBE9C] text-[0.7rem]'>
+                <p className='text-[#C9A68C] text-[0.7rem]'>
                     Sitio hecho por—<a href="#" className='text-[#f2ede5]'>DivFlow</a>
                 </p>
-                <p className='text-[#6FBE9C] text-[0.7rem]'>
+                <p className='text-[#C9A68C] text-[0.7rem]'>
                     Este sitio usa <a href="#" className='text-[#f2ede5]'>cookies</a>
                 </p>
-                <p className='text-[#6FBE9C] text-[0.7rem]'>
+                <p className='text-[#C9A68C] text-[0.7rem]'>
                     Todos los derechos reservados © <a href="#" className='text-[#f2ede5]'>2026</a>
                 </p>
             </div>

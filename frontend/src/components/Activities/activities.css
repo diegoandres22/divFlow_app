@@ -2,7 +2,7 @@
 
 
 .activities-title-break {
-    color: #08110E;
+    color: #120D0A;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: #EAF6F1;
+    color: #F5F0EA;
     clip-path: inset(100% 0 0 0);
     white-space: wrap;
     transition: none;

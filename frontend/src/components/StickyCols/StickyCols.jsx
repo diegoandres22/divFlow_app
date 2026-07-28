@@ -74,12 +74,12 @@ const StickyCols = () => {
     });
 
     return (
-        <section className="sticky-cols w-screen h-dvh overflow-hidden bg-[#08110E] lg:mb-20">
+        <section className="sticky-cols w-screen h-dvh overflow-hidden bg-[#120D0A] lg:mb-20">
             <div className="sticky-cols-wrapper relative w-full h-screen">
                 <div className="col col-1">
                     <div className="col-content">
                         <div className="col-content-wrapper">
-                            <h1 className="text-2xl text-[#6FBE9C] font-bold leading-auto">Visibilidad total
+                            <h1 className="text-2xl text-[#C9A68C] font-bold leading-auto">Visibilidad total
                                 <br />
                                 sobre cada—proceso
                                 <br />

@@ -87,7 +87,7 @@ const Activities = () => {
             <p className='text-[.7rem] font-bold text-[#eae5dd] activities-subtitle'>¿Listo para escalar tu operación?</p>
             <div className="lg:mt-10 mt-7 activities-part origin-bottom">
                 {activitiesLines.map((line, index) => (
-                    <h1 key={index} className={`activities-heading text-[#EAF6F1] lg:text-[9.5rem] text-[3rem] leading-[0.9]`} font-medium tracking-tighter>
+                    <h1 key={index} className={`activities-heading text-[#F5F0EA] lg:text-[9.5rem] text-[3rem] leading-[0.9]`} font-medium tracking-tighter>
                         <span className={`activities-title-break ${index == 1 ? "lg:pb-3 pb-2" : ""}`}>
                             {line}
                             <span className={`activities-title-clip ${index == 1 ? "lg:pb-3 pb-2" : ""}`}>
@@ -105,34 +105,34 @@ const Activities = () => {
                     <div className="flex flex-col justify-start items-start gap-5 mt-8 mr-14">
                         <div className="w-full mr-14">
                             <div className="flex justify-between w-full mb-4">
-                                <h1 className="text-[#6FBE9C] text-xl">Automatización n8n</h1>
-                                <p className="text-[#6FBE9C] text-[0.7rem]">1-2 semanas</p>
+                                <h1 className="text-[#C9A68C] text-xl">Automatización n8n</h1>
+                                <p className="text-[#C9A68C] text-[0.7rem]">1-2 semanas</p>
                             </div>
                             <div className="relative z-9 w-full h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#1D9E75] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                <div className="progress-line absolute z-10 bg-[#E8734A] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                             </div>
                         </div>
                         <div className="w-full mr-14">
                             <div className="flex justify-between w-full mb-4">
-                                <h1 className="text-[#6FBE9C] text-xl">Integraciones a medida</h1>
-                                <p className="text-[#6FBE9C] text-[0.7rem]">3-6 semanas</p>
+                                <h1 className="text-[#C9A68C] text-xl">Integraciones a medida</h1>
+                                <p className="text-[#C9A68C] text-[0.7rem]">3-6 semanas</p>
                             </div>
                             <div className="relative z-9 w-full h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#1D9E75] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                <div className="progress-line absolute z-10 bg-[#E8734A] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                             </div>
                         </div>
                         <div className="w-full mr-14">
                             <div className="flex justify-between w-full mb-4">
-                                <h1 className="text-[#6FBE9C] text-xl">Desarrollo SaaS completo</h1>
-                                <p className="text-[#6FBE9C] text-[0.7rem]">6-12 semanas</p>
+                                <h1 className="text-[#C9A68C] text-xl">Desarrollo SaaS completo</h1>
+                                <p className="text-[#C9A68C] text-[0.7rem]">6-12 semanas</p>
                             </div>
                             <div className="relative z-9 w-full h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#1D9E75] w-[60%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                <div className="progress-line absolute z-10 bg-[#E8734A] w-[60%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='lg:w-1/2 w-full text-[#6FBE9C] lg:text-[2rem] text-[1rem] md:leading-[1.1] lg:mt-0 mt-8 lg:pr-0'>
+                <div className='lg:w-1/2 w-full text-[#C9A68C] lg:text-[2rem] text-[1rem] md:leading-[1.1] lg:mt-0 mt-8 lg:pr-0'>
                     <p>Trabajamos con negocios de todos los tamaños: desde una automatización puntual en n8n que te devuelve horas por semana, hasta el desarrollo completo de tu producto SaaS. Elegís el nivel de involucramiento que necesitás, nosotros nos encargamos del resto.</p>
                 </div>
             </div>

@@ -14,11 +14,11 @@ const Footer = () => {
             </div>
 
             <div className='flex justify-between items-center text-2xl mt-14'>
-                <h3 className='text-[#6FBE9C]'>Desarrollamos software a medida y<br />
+                <h3 className='text-[#C9A68C]'>Desarrollamos software a medida y<br />
                     automatizamos procesos con n8n<br />
                     para equipos que quieren crecer.<br /><br />
                     Si tenés un proyecto en mente—<br />
-                    <a href="#" className='text-[#EAF6F1] hover:text-[#9FE1CB] underline'>contactanos.</a>
+                    <a href="#" className='text-[#F5F0EA] hover:text-[#F0B08C] underline'>contactanos.</a>
                 </h3>
 
                 <div className='flex flex-col justify-center items-end'>
@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <p className="text-[0.8rem] text-[#6FBE9C] text-right">
+                    <p className="text-[0.8rem] text-[#C9A68C] text-right">
                         DivFlow—software a medida y<br />
                         automatizaciones con n8n.
                     </p>
