@@ -102,7 +102,7 @@ const Gallery = () => {
         for (let i = 1; i <= quantity; i++) {
             capsules.push(
                 <h3 key={i} style={{ "--index": i }} className='tracking-tighter'>
-                    Capsules®
+                    DivFlow®
                 </h3>
             );
         }
@@ -121,15 +121,15 @@ const Gallery = () => {
             </div>
 
             <div className="gallery-background">
-                <img src={gbg1} alt="Classic Capsule" />
+                <img src={gbg1} alt="Automatización de ventas" />
                 <div className="gallery-topText">
-                    <h4>ClassicCapsule®</h4>
+                    <h4>Automatización de ventas</h4>
                     <h3>(Scroll)</h3>
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
                         <BsFillPlusCircleFill className='w-8 h-8 text-[#6FBE9C]' />
-                        <h3>Classic Capsule® boasts refined aesthetics and a modern <br /> interior, creating an intimate retreat in a desert landscape</h3>
+                        <h3>Un flujo en n8n que capta leads, los califica y los carga <br /> directo en tu CRM sin que nadie toque una celda</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
                         <div className="progress-line absolute z-10 bg-[#1D9E75] w-[33%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
@@ -138,15 +138,15 @@ const Gallery = () => {
             </div>
 
             <div id="gallery-second" className="gallery-background2">
-                <img src={gbg2} alt="Terrace Capsule" />
+                <img src={gbg2} alt="Sincronización de datos" />
                 <div className="gallery-topText">
-                    <h4>Terrace Capsule®</h4>
+                    <h4>Sincronización de datos</h4>
                     <h3>(Scroll)</h3>
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
                         <BsFillPlusCircleFill className='w-8 h-8 text-[#6FBE9C]' />
-                        <h3>Classic Capsule® boasts refined aesthetics and a modern <br /> interior, creating an intimate retreat in a desert landscape</h3>
+                        <h3>Conectamos tus herramientas para que la información viaje <br /> sola entre sistemas, sin duplicados ni planillas manuales</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
                         <div className="progress-line absolute z-10 bg-[#1D9E75] w-[67%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
@@ -155,15 +155,15 @@ const Gallery = () => {
             </div>
 
             <div id="gallery-third" className="gallery-background2">
-                <img src={gbg3} alt="Desert Capsule" />
+                <img src={gbg3} alt="SaaS a medida" />
                 <div className="gallery-topText">
-                    <h4>Desert Capsule®</h4>
+                    <h4>SaaS a medida</h4>
                     <h3>(Scroll)</h3>
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
                         <BsFillPlusCircleFill className='w-8 h-8 text-[#6FBE9C]' />
-                        <h3>Classic Capsule® boasts refined aesthetics and a modern <br /> interior, creating an intimate retreat in a desert landscape</h3>
+                        <h3>Tu producto, construido desde cero: dashboard, base de <br /> datos y lógica de negocio, listo para escalar</h3>
                     </div>
                     <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
                         <div className="progress-line absolute z-10 bg-[#1D9E75] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>

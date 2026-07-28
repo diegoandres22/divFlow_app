@@ -77,27 +77,27 @@ const Choose = () => {
                 </div>
                 <div className='lg:w-1/2 w-full'>
                     <div className=" lg:w-[30%] w-[60%]">
-                        <p className="text-[.7rem] text-[#eae5dd]">All Capsules® houses—has built
-                            based on the same rules:</p>
+                        <p className="text-[.7rem] text-[#eae5dd]">Todo lo que construimos
+                            en DivFlow comparte estos principios:</p>
                     </div>
                     <div className="flex flex-1 flex-wrap justify-start items-start gap-2 mt-8">
                         <div className="border-[1px] border-[#6FBE9C] text-[#6FBE9C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
-                            Sustainable
+                            Escalable
                         </div>
                         <div className="border-[1px] border-[#EAF6F1] text-[#EAF6F1] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
-                            Nature—Care
+                            Seguro
                         </div>
                         <div className="border-[1px] border-[#6FBE9C] text-[#6FBE9C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
-                            Smart
+                            Sin código
                         </div>
                         <div className="border-[1px] border-[#EAF6F1] text-[#EAF6F1] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
-                            Privacy
+                            Integrable
                         </div>
                         <div className="border-[1px] border-[#6FBE9C] text-[#6FBE9C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
-                            Spacious
+                            Soporte 24/7
                         </div>
                         <div className="border-[1px] border-[#EAF6F1] text-[#EAF6F1] lg:text-[2rem] px-[20px] py-[4px] rounded-full">
-                            Glassed-in
+                            A medida
                         </div>
                     </div>
                 </div>
@@ -106,4 +106,4 @@ const Choose = () => {
     );
 };
 
-export defau
+export default Choose;

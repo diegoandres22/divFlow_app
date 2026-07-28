@@ -61,7 +61,7 @@ const Hero = () => {
                             className="text-[#EAF6F1] text-start text-6xl md:text-9xl font-bold tracking-wider lg:absolute  lg:left-2"
                             style={{ textShadow: '2px 2px 4px #aaa' }}
                         >
-                            Capsules®
+                            DivFlow
                         </h1>
 
                         <div className="w-full h-auto absolute  top-24 md:bottom-[8%] lg:bottom-[9%] flex md:flex-row flex-col md:justify-between md:items-end">
@@ -69,16 +69,16 @@ const Hero = () => {
                                 className="text-start lg:mt-0 md:text-[#EAF6F1] text-[#6FBE9C] text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
                                 style={{ textShadow: '2px 2px 4px #000' }}
                             >
-                                <span>Closer to</span>
-                                <span>Nature—Closer</span>
-                                <span>to Yourself</span>
+                                <span>Software a medida,</span>
+                                <span>automatizado</span>
+                                <span>con n8n</span>
                             </h2>
 
                             <p
                                 className="md:w-[20%] w-[80%] text-[#EAF6F1] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
                                 style={{ textShadow: '2px 2px 4px #000' }}
                             >
-                                Spend unforgettable and remarkable time in the Californian desert with—Capsules.
+                                Construimos productos SaaS y flujos automatizados que hacen crecer tu operación sin fricción—DivFlow.
                             </p>
                         </div>
                     </div>
