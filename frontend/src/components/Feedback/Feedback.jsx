@@ -30,7 +30,7 @@ const Feedback = () => {
         <section className='w-sereen h-dvh p-8 flex flex-col justify-center items-center'>
             <div className='w-full text-left'>
                 <p className='text-[.7rem] font-bold text-[#eae5dd] activities-subtitle text-left'>
-                    Do people like us?
+                    ¿Qué dicen nuestros clientes?
                 </p>
 
                 <div>

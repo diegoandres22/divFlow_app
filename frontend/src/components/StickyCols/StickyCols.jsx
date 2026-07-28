@@ -79,22 +79,22 @@ const StickyCols = () => {
                 <div className="col col-1">
                     <div className="col-content">
                         <div className="col-content-wrapper">
-                            <h1 className="text-2xl text-[#6FBE9C] font-bold leading-auto">Enjoy the view
+                            <h1 className="text-2xl text-[#6FBE9C] font-bold leading-auto">Visibilidad total
                                 <br />
-                                through—the wide
+                                sobre cada—proceso
                                 <br />
-                                panoramic glass
+                                automatizado, en
                                 <br />
-                                window
+                                un solo panel
                             </h1>
                             <div className="col-content-para flex items-center gap-4 justify-between">
                                 <div className="flex items-center gap-0 justify-center">
                                     <h3 className="border-1 px-3 py-1 rounded-full text-[#aaa091]">1</h3>
                                     <h3 className="border-1 px-3 py-1 rounded-full text-[#524e4b]">3</h3>
                                 </div>
-                                <p className={`text-[12px] font-medium  ${!reveal ? "mr-6" : "mr-0"}`}> Get closer to the desert nature than ever before
+                                <p className={`text-[12px] font-medium  ${!reveal ? "mr-6" : "mr-0"}`}> Mirá en tiempo real cada flujo corriendo
                                     <br />
-                                    and admire this unique, breathtaking landscape.
+                                    sin sorpresas y con trazabilidad completa.
                                 </p>
                             </div>
 

@@ -11,6 +11,7 @@ import Activities from '../../components/Activities/Activities'
 import Showcase from '../../components/Showcase/Showcase'
 import Feedback from '../../components/Feedback/Feedback'
 import FooterBanner from '../../components/FooterBanner/FooterBanner'
+import Cards from '../../components/Cards/Cards'
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             <StickyCols />
             <Activities />
             <Showcase />
+            <Cards />
             <Feedback />
             <FooterBanner />
         </div >
