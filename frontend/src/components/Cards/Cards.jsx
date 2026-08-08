@@ -1,5 +1,6 @@
 import Card from "./Card";
 import Brand from "../Buttons/Brand";
+import { smoothScrollTo } from "../../lib/smoothScroll";
 
 const apps = [
     {
@@ -43,6 +44,7 @@ const Cards = () => {
                     </p>
                     <a
                         href="#contact"
+                        onClick={(e) => { e.preventDefault(); smoothScrollTo("#contact"); }}
                         className="rounded-full py-3 px-6 text-[0.85rem] font-bold border border-[#C9A68C] text-[#C9A68C] hover:bg-[#C9A68C] hover:text-[#1A120D] transition-colors duration-300"
                     >
                         Contarnos qué necesitás

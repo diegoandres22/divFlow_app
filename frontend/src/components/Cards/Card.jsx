@@ -1,3 +1,5 @@
+import { smoothScrollTo } from "../../lib/smoothScroll";
+
 const Card = ({ name, price, period, description, features, highlighted, ctaLabel, demoUrl }) => {
     return (
         <div
@@ -44,6 +46,7 @@ const Card = ({ name, price, period, description, features, highlighted, ctaLabe
                 )}
                 <a
                     href="#contact"
+                    onClick={(e) => { e.preventDefault(); smoothScrollTo("#contact"); }}
                     className={`w-full text-center rounded-full py-3 text-[0.85rem] font-bold transition-colors duration-300 ${highlighted
                             ? "bg-[#E8734A] text-[#1A120D] hover:bg-[#f08a63]"
                             : "bg-[#F5F0EA] text-[#1A120D] hover:bg-[#e0d8cd]"

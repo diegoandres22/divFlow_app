@@ -9,7 +9,6 @@ import MarqueeSticky from '../../components/Layouts/MarqueeSticky'
 import MapLink from '../../components/MapLink/MapLink'
 import Activities from '../../components/Activities/Activities'
 import Showcase from '../../components/Showcase/Showcase'
-import Feedback from '../../components/Feedback/Feedback'
 import FooterBanner from '../../components/FooterBanner/FooterBanner'
 import Cards from '../../components/Cards/Cards'
 import Contact from '../../components/Contact/Contact'
@@ -27,7 +26,6 @@ const Home = () => {
             <Activities />
             <Showcase />
             <Cards />
-            <Feedback />
             <Contact />
             <FooterBanner />
         </div >

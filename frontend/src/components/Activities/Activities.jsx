@@ -83,7 +83,7 @@ const Activities = () => {
     });
 
     return (
-        <section className="activities-section w-full h-[120vh] p-8 mt-16">
+        <section className="activities-section w-full min-h-fit lg:h-[120vh] p-6 lg:p-8 mt-16 overflow-hidden">
             <p className='text-[.7rem] font-bold text-[#eae5dd] activities-subtitle'>¿Listo para escalar tu operación?</p>
             <div className="lg:mt-10 mt-7 activities-part origin-bottom">
                 {activitiesLines.map((line, index) => (
@@ -102,28 +102,28 @@ const Activities = () => {
                     <div className="lg:w-[30%] w-[60%]">
                         <p className="text-[.7rem] text-[#eae5dd] text-nowrap">Nuestros servicios se adaptan al tamaño de tu proyecto:</p>
                     </div>
-                    <div className="flex flex-col justify-start items-start gap-5 mt-8 mr-14">
-                        <div className="w-full mr-14">
-                            <div className="flex justify-between w-full mb-4">
-                                <h1 className="text-[#C9A68C] text-xl">Automatización n8n</h1>
+                    <div className="flex flex-col justify-start items-start gap-5 mt-8 lg:mr-14">
+                        <div className="w-full lg:mr-14">
+                            <div className="flex flex-wrap justify-between gap-x-3 gap-y-1 w-full mb-4">
+                                <h1 className="text-[#C9A68C] text-base lg:text-xl">Automatización n8n</h1>
                                 <p className="text-[#C9A68C] text-[0.7rem]">1-2 semanas</p>
                             </div>
                             <div className="relative z-9 w-full h-[0.1rem] bg-[#4f4b48]">
                                 <div className="progress-line absolute z-10 bg-[#E8734A] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                             </div>
                         </div>
-                        <div className="w-full mr-14">
-                            <div className="flex justify-between w-full mb-4">
-                                <h1 className="text-[#C9A68C] text-xl">Integraciones a medida</h1>
+                        <div className="w-full lg:mr-14">
+                            <div className="flex flex-wrap justify-between gap-x-3 gap-y-1 w-full mb-4">
+                                <h1 className="text-[#C9A68C] text-base lg:text-xl">Integraciones a medida</h1>
                                 <p className="text-[#C9A68C] text-[0.7rem]">3-6 semanas</p>
                             </div>
                             <div className="relative z-9 w-full h-[0.1rem] bg-[#4f4b48]">
                                 <div className="progress-line absolute z-10 bg-[#E8734A] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                             </div>
                         </div>
-                        <div className="w-full mr-14">
-                            <div className="flex justify-between w-full mb-4">
-                                <h1 className="text-[#C9A68C] text-xl">Desarrollo SaaS completo</h1>
+                        <div className="w-full lg:mr-14">
+                            <div className="flex flex-wrap justify-between gap-x-3 gap-y-1 w-full mb-4">
+                                <h1 className="text-[#C9A68C] text-base lg:text-xl">Desarrollo SaaS completo</h1>
                                 <p className="text-[#C9A68C] text-[0.7rem]">6-12 semanas</p>
                             </div>
                             <div className="relative z-9 w-full h-[0.1rem] bg-[#4f4b48]">

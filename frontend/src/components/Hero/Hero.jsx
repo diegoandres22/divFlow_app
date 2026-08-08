@@ -36,10 +36,10 @@ const Hero = () => {
                 <div className="responsive-mobile">
                     {/* Background image (down layer) */}
                     <div
-                        className="hero-img absolute inset-0 bg-no-repeat bg-cover bg-center z-0 md:block hidden"
+                        className="hero-img absolute inset-0 bg-no-repeat bg-cover bg-center z-0 lg:block hidden"
                         style={{ backgroundImage: `url(${robotHeroBg})` }}
                     />
-                    <div className="hero-img absolute inset-0 bg-[#120D0A]/40 z-[1] md:block hidden" />
+                    <div className="hero-img absolute inset-0 bg-[#120D0A]/40 z-[1] lg:block hidden" />
 
                     {/* Mobile image fallback */}
                     <div className="block lg:hidden mt-6 mb-6">

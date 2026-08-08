@@ -27,14 +27,14 @@ const Feedback = () => {
     const progressWidth = feedbackReviewLG[index][3];
 
     return (
-        <section className='w-sereen h-dvh p-8 flex flex-col justify-center items-center'>
+        <section className='w-full h-dvh p-6 lg:p-8 flex flex-col justify-center items-center'>
             <div className='w-full text-left'>
                 <p className='text-[.7rem] font-bold text-[#eae5dd] activities-subtitle text-left'>
                     ¿Qué dicen nuestros clientes?
                 </p>
 
                 <div>
-                    <h1 className='text-[#F5F0EA] text-7xl mt-4 mb-6'>
+                    <h1 className='text-[#F5F0EA] text-3xl lg:text-7xl mt-4 mb-6'>
                         {feedbackH1LG[index].map((line, i) => (
                             <span key={i}>
                                 {line}<br />
@@ -47,7 +47,7 @@ const Feedback = () => {
                     <img
                         src={reviewImages[feedbackReviewLG[index][2]]}
                         alt="review img"
-                        className='w-[4.5vw] rounded-4xl'
+                        className='w-12 h-12 lg:w-[4.5vw] lg:h-auto rounded-4xl object-cover shrink-0'
                     />
                     <p className="text-[#aca192] text-[0.7rem]">
                         {feedbackReviewLG[index][0]}<br />
@@ -61,18 +61,18 @@ const Feedback = () => {
                             onClick={handlePrev}
                             className='border-[1px] p-1 border-[#aaa090] hover:bg-[#aaa090] rounded-4xl'
                         >
-                            <IoMdArrowBack className="text-[#f1ece4] w-[2vw] h-[3.4vh]" />
+                            <IoMdArrowBack className="text-[#f1ece4] w-5 h-5 lg:w-[2vw] lg:h-[3.4vh]" />
                         </button>
 
                         <button
                             onClick={handleNext}
                             className='border-[1px] p-1 border-[#aaa090] rounded-4xl'
                         >
-                            <IoMdArrowForward className="text-[#f1ece4] w-[2vw] h-[3.4vh]" />
+                            <IoMdArrowForward className="text-[#f1ece4] w-5 h-5 lg:w-[2vw] lg:h-[3.4vh]" />
                         </button>
                     </div>
 
-                    <div className="relative z-9 w-70 h-[0.1rem] bg-[#4f4b48]">
+                    <div className="relative z-9 w-32 lg:w-70 h-[0.1rem] bg-[#4f4b48]">
                         <div
                             className="progress-line absolute z-10 bg-[#E8734A] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"
                             style={{ width: progressWidth }}

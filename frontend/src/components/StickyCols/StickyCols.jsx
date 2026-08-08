@@ -12,6 +12,11 @@ const StickyCols = () => {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger, SplitText);
 
+        // Desktop-only: the pinned/overlapping scroll-jack layout is designed
+        // for large screens. On mobile the section renders as a normal
+        // stacked flow (see index.css), so skip the pin/scrub timeline entirely.
+        if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
         // 1️⃣ Split text lines once DOM ready
         const textElements = document.querySelectorAll(".col-3 h1, .col-3 p");
         textElements.forEach((element) => {

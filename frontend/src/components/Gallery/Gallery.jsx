@@ -18,6 +18,12 @@ const Gallery = () => {
 
     useEffect(() => {
 
+        // Desktop-only: the pinned scroll-jack that morphs the 3 background
+        // cards into each other is a large-screen interaction. On mobile the
+        // 3 cards stack in normal document flow (see gallery.css), so skip
+        // the pin/scrub timeline entirely there.
+        if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
         // document.fonts.ready.then(() => {
         // Create new timeline
         const tl4 = gsap.timeline({
@@ -124,8 +130,7 @@ const Gallery = () => {
             <div className="gallery-background">
                 <img src={gbg1} alt="Automatización de ventas" />
                 <div className="gallery-topText">
-                    <h4>Automatización de ventas</h4>
-                    <h3>(Scroll)</h3>
+                    <h4>Automatización de procesos</h4>
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
@@ -142,7 +147,6 @@ const Gallery = () => {
                 <img src={gbg2} alt="Sincronización de datos" />
                 <div className="gallery-topText">
                     <h4>Sincronización de datos</h4>
-                    <h3>(Scroll)</h3>
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
@@ -159,7 +163,6 @@ const Gallery = () => {
                 <img src={gbg3} alt="SaaS a medida" />
                 <div className="gallery-topText">
                     <h4>SaaS a medida</h4>
-                    <h3>(Scroll)</h3>
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>

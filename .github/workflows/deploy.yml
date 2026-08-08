@@ -1,9 +1,13 @@
 name: Deploy Vite App (frontend) to GitHub Pages
 
+# DESACTIVADO: el hosting de producción de DivFlow va a ser Vercel (conectado
+# directo al repo desde su propio dashboard), no GitHub Pages. Este workflow
+# es residuo del template original y ya no debe dispararse solo con push a
+# main para evitar publicar una versión fantasma del sitio en github.io.
+# Queda solo activable a mano (Actions > Run workflow) hasta que se borre
+# definitivamente en la limpieza de "código a eliminar".
 on:
-  push:
-    branches:
-      - main  # Trigger deploy when code pushed to main branch
+  workflow_dispatch: {}
 
 permissions:
   contents: write  # allow deployment

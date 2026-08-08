@@ -19,6 +19,8 @@ body {
 	/* Chrome, Edge, Safari */
 	-ms-overflow-style: none;
 	/* IE & Edge */
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 
@@ -192,35 +194,39 @@ body {
 }
 
 /* ------------------ Sticky Section Style ------------------- */
+/* Mobile-first base: normal stacked flow, no scroll-jacking/pin, no absolute overlap */
 .sticky-cols {
 	padding: 0rem;
+	height: auto !important;
 
-	/* .sticky-cols-wrapper {
+	.sticky-cols-wrapper {
 		position: relative;
 		width: 100%;
-		height: 100vh;
-	} */
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1rem;
+	}
 
 	.col {
-		position: absolute;
-		width: 50%;
-		height: 100%;
-		will-change: transform;
+		position: relative;
+		width: 100%;
+		height: 70vh;
+		will-change: auto;
+		transform: none !important;
+		opacity: 1 !important;
+		scale: 1 !important;
 	}
 
 	.col h1 {
 		color: #C9A68C;
-		width: 60%;
+		width: 100%;
 	}
 
 	.col p {
 		color: #C9A68C;
 		width: auto;
-	}
-
-	.col-2 {
-		scale: 1;
-		transform: translateX(100%);
 	}
 
 	.col .col-img img {
@@ -237,15 +243,6 @@ body {
 		padding: 0.5rem;
 	}
 
-	.col-3 {
-		transform: translateX(100%) translateY(100%);
-		padding: 0.5rem;
-	}
-
-	.col-4 {
-		transform: translateX(100%) translateY(100%);
-	}
-
 	.col-content-wrapper {
 		padding: 1.5rem;
 		display: flex;
@@ -259,37 +256,39 @@ body {
 		width: 100%;
 		height: 100%;
 		background-color: #1A120D;
-		border-radius: 3rem;
+		border-radius: 2rem;
 		overflow: hidden;
 	}
 
 	.col-content-wrapper-2 {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		padding: 2.5rem;
+		/* Text-only duplicate of .col-content-wrapper used for the desktop
+		   cross-fade reveal. No unique content is lost by keeping it out of
+		   the mobile flow (the same message already renders above). */
+		display: none;
+	}
+
+	.col-2 {
+		height: auto;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		gap: 1rem;
 	}
 
 	.col-img-1,
 	.col-img-2 {
-		position: absolute;
-		top: 0;
-		left: 0;
+		position: relative;
+		top: auto;
+		left: auto;
 		width: 100%;
-		height: 100%;
+		height: 45vh;
 	}
 
 	.col-img-2 {
-		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+		display: block;
 	}
 
-	.col-img-2 {
-		transform: scale(1);
+	.col-4 {
+		height: 70vh;
 	}
 
 	.line {
@@ -299,6 +298,83 @@ body {
 	.line span {
 		display: block;
 		will-change: transform;
+	}
+}
+
+/* Desktop (lg+): exact original pinned, overlapping, scroll-jacked layout */
+@media (min-width: 1024px) {
+	.sticky-cols {
+		height: 100dvh !important;
+
+		.sticky-cols-wrapper {
+			display: block;
+			padding: 0;
+			gap: 0;
+			height: 100vh;
+		}
+
+		.col {
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			will-change: transform;
+			transform: revert-layer;
+			opacity: revert-layer;
+			scale: revert-layer;
+		}
+
+		.col h1 {
+			width: 60%;
+		}
+
+		.col-2 {
+			display: block;
+			height: 100%;
+			gap: 0;
+			scale: 1;
+			transform: translateX(100%);
+		}
+
+		.col-3 {
+			transform: translateX(100%) translateY(100%);
+			padding: 0.5rem;
+		}
+
+		.col-4 {
+			display: block;
+			transform: translateX(100%) translateY(100%);
+		}
+
+		.col-content-wrapper {
+			border-radius: 3rem;
+		}
+
+		.col-content-wrapper-2 {
+			display: flex;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 2.5rem;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.col-img-1,
+		.col-img-2 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.col-img-2 {
+			display: block;
+			clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+			transform: scale(1);
+		}
 	}
 }
 

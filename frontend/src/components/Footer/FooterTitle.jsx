@@ -71,7 +71,7 @@ const FooterTitle = () => {
 
     return (
         <section ref={ftConRef} className='relative z-1 w-screen h-[40vh] border-1 border-t-[#c4c1b9]'>
-            <div className='w-full flex justify-between items-center px-6 mt-8'>
+            <div className='w-full flex flex-col lg:flex-row lg:justify-between items-center gap-1 lg:gap-0 px-6 mt-8 text-center'>
                 <p className='text-[#C9A68C] text-[0.7rem]'>
                     Sitio hecho por—<a href="#" className='text-[#f2ede5]'>DivFlow</a>
                 </p>
@@ -83,8 +83,8 @@ const FooterTitle = () => {
                 </p>
             </div>
 
-            <div className='footer-title w-full text-center'>
-                <h1 className='text-[18vw] font-bold'>
+            <div className='footer-title w-full text-center overflow-hidden'>
+                <h1 className='text-7xl sm:text-8xl lg:text-[18vw] font-bold whitespace-nowrap'>
                     <Brand />
                 </h1>
             </div>
