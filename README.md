@@ -1,45 +1,54 @@
-# 🏆 Capsule - Awwwards SOTD Clone
+# DivFlow
 
-![Capsule Showcase](https://raw.githubusercontent.com/ShowravKormokar/capsule/refs/heads/main/frontend/src/assets/showcase-img.png)
+Sitio web de marca de **DivFlow** — desarrollo de software a medida, plataformas e-commerce y automatizaciones con [n8n](https://n8n.io/).
 
+Landing page de una sola página (SPA), con animaciones de scroll construidas en GSAP y un formulario de contacto funcional conectado a Formspree.
 
-# > ⚠️ **This Website Is Still Under Construction. Not fully responsive yet. Try to see in desktop mode (1200px to 1900px width). Thanks🚨☠️**
+## Stack
 
-A faithful React.js clone of the **"awwwards"** ([Awwwards.com](https://www.awwwards.com/sites/capsules-r)) SOTD-winning **"Capsule"** website by Moyra ([capsule.moyra.co](https://capsule.moyra.co)), which won Awwwards Site of the Day. This project was built for learning purposes to master advanced frontend techniques like scroll-triggered animations, smooth page transitions, and responsive design.
-- React Vite (version: 19.1.0)
-- React Router Dom (Version: 7.6.2)
-- Tailwind CSS (Version: 4.1.8)
-- GSAP (Version: 2.1.2)
+- **React 19** + **Vite 6**
+- **React Router DOM 7** (una sola ruta, `/`)
+- **Tailwind CSS 4**
+- **GSAP 3** (`ScrollTrigger`, `ScrollSmoother`, `SplitText`) vía `@gsap/react`
+- **Formspree** para el envío del formulario de contacto (sin backend propio)
 
-## 🚀 Live Demo
+## Estructura del repo
 
-[View Live Project](https://showravkormokar.github.io/capsule/)
+```
+capsule/
+├── .github/workflows/   # CI (actualmente desactivado, ver nota abajo)
+├── frontend/            # Proyecto Vite real — todo el código vive acá
+│   ├── src/
+│   │   ├── components/  # Un componente por sección de la landing
+│   │   ├── pages/Home/  # Composición de las secciones
+│   │   ├── layouts/     # Layout con Navbar, Preloader y ScrollSmoother
+│   │   └── lib/         # Utilidades (scroll suave compatible con ScrollSmoother)
+│   └── public/          # robots.txt, sitemap.xml, og-image.jpg
+└── README.md
+```
 
-## ✨ Features
+## Correr el proyecto localmente
 
-- **Smooth Animations:** Recreated the sophisticated scroll-driven animations from the original site using GSAP.
-- **Modern Stack:** Built with a cutting-edge tech stack including React, Vite, and Tailwind CSS.
-- **Fully Responsive:** Designed to provide a seamless experience across all device sizes.
-- **Pixel-Perfect UI:** Focused on replicating the original design's visual appeal and user interface details.
+Todo el proyecto real vive dentro de `frontend/` — instalar y correr siempre desde ahí, nunca desde la raíz del repo:
 
-## 🛠️ Tech Stack
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-- **Frontend Framework:** [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [GSAP (GreenSock Animation Platform)](https://gsap.com/)
-- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
-- **Package Manager:** npm / yarn
+Otros scripts disponibles (dentro de `frontend/`):
 
-## 📦 Installation & Setup
+```bash
+npm run build    # build de producción
+npm run preview  # sirve el build de producción localmente
+npm run lint     # ESLint
+```
 
-To run this project locally, follow these steps:
+## Despliegue
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/showravkormokar/capsule.git
-   cd capsule
+El hosting de producción va a ser **Vercel**, conectado directo al repositorio (Root Directory: `frontend`). El workflow de GitHub Actions que quedaba de un fork anterior del proyecto está desactivado (solo se puede correr a mano) porque apuntaba a GitHub Pages, que no es el destino final.
 
-## 🪧 Notice
+## Nota de origen
 
-To build this website only study perpose and understanding animation and increase design knowledge.
-All rights reserve ([capsule.moyra.co](https://capsule.moyra.co))
+Este proyecto arrancó como un fork de [`ShowravKormokar/capsule`](https://github.com/ShowravKormokar/capsule) (un clon del sitio Awwwards "Capsule" de Moyra, hecho con fines de aprendizaje de animaciones GSAP) y fue completamente rebrandeado y reescrito para DivFlow: paleta de colores, copy, estructura de secciones, imágenes, formulario de contacto y modelo de oferta (apps para alquilar en vez de planes fijos).

@@ -6,7 +6,6 @@ import Brand from '../Buttons/Brand';
 const MarqueeText = () => {
     const animationRef = useRef(null);
     const isForwardRef = useRef(true);
-    const starRotationRef = useRef(0); // Track current rotation
 
     useEffect(() => {
         // Start with default forward animation
@@ -17,7 +16,6 @@ const MarqueeText = () => {
             }
 
             const duration = 10; // Fixed duration (lower = faster)
-            const repeatDelay = 0;
 
             if (direction === 'forward') {
                 animationRef.current = gsap.to(".marquee-text-marquee", {

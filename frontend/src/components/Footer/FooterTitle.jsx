@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import "./footertitle.css";
 import Brand from "../Buttons/Brand";
@@ -71,16 +72,15 @@ const FooterTitle = () => {
 
     return (
         <section ref={ftConRef} className='relative z-1 w-screen h-[40vh] border-1 border-t-[#c4c1b9]'>
-            <div className='w-full flex flex-col lg:flex-row lg:justify-between items-center gap-1 lg:gap-0 px-6 mt-8 text-center'>
+            <div className='w-full flex flex-col lg:flex-row lg:justify-between items-center gap-2 lg:gap-0 px-6 mt-8 text-center'>
                 <p className='text-[#C9A68C] text-[0.7rem]'>
-                    Sitio hecho por—<a href="#" className='text-[#f2ede5]'>DivFlow</a>
+                    © 2026 DivFlow. Todos los derechos reservados.
                 </p>
-                <p className='text-[#C9A68C] text-[0.7rem]'>
-                    Este sitio usa <a href="#" className='text-[#f2ede5]'>cookies</a>
-                </p>
-                <p className='text-[#C9A68C] text-[0.7rem]'>
-                    Todos los derechos reservados © <a href="#" className='text-[#f2ede5]'>2026</a>
-                </p>
+                <div className='flex flex-wrap justify-center items-center gap-x-4 gap-y-1'>
+                    <Link to="/privacidad" className='text-[#C9A68C] hover:text-[#E8734A] text-[0.7rem] transition-colors duration-300'>Política de Privacidad</Link>
+                    <Link to="/terminos" className='text-[#C9A68C] hover:text-[#E8734A] text-[0.7rem] transition-colors duration-300'>Términos y Condiciones</Link>
+                    <Link to="/aviso-legal" className='text-[#C9A68C] hover:text-[#E8734A] text-[0.7rem] transition-colors duration-300'>Aviso Legal</Link>
+                </div>
             </div>
 
             <div className='footer-title w-full text-center overflow-hidden'>

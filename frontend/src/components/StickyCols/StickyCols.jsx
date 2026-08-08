@@ -109,12 +109,12 @@ const StickyCols = () => {
                 <div className="col col-2">
                     <div className="col-img col-img-1">
                         <div className="col-img-wrapper">
-                            <img src={colimg1} alt="img" />
+                            <img src={colimg1} alt="img" loading="lazy" />
                         </div>
                     </div>
                     <div className="col col-img-2 p-2">
                         <div className="col-img-wrapper">
-                            <img src={colimg2} alt="img" />
+                            <img src={colimg2} alt="img" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@ const StickyCols = () => {
                 <div className="col col-4">
                     <div className="col-img col-img-1">
                         <div className="col-img-wrapper">
-                            <img src={colimg3} alt="img" />
+                            <img src={colimg3} alt="img" loading="lazy" />
                         </div>
                     </div>
                 </div>

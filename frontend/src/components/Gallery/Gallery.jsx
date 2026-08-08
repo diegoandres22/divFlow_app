@@ -5,10 +5,9 @@ import './gallery.css';
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import Brand from "../Buttons/Brand";
 
-import gbg1 from '../../assets/background1.png';
+import gbg1 from '../../assets/background1.jpg';
 import gbg2 from '../../assets/background2.jpg';
-import gbg3 from '../../assets/background3.png';
-import gbg4 from '../../assets/background4.png';
+import gbg3 from '../../assets/background3.jpg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -128,7 +127,7 @@ const Gallery = () => {
             </div>
 
             <div className="gallery-background">
-                <img src={gbg1} alt="Automatización de ventas" />
+                <img src={gbg1} alt="Automatización de ventas" loading="lazy" />
                 <div className="gallery-topText">
                     <h4>Automatización de procesos</h4>
                 </div>
@@ -144,7 +143,7 @@ const Gallery = () => {
             </div>
 
             <div id="gallery-second" className="gallery-background2">
-                <img src={gbg2} alt="Sincronización de datos" />
+                <img src={gbg2} alt="Sincronización de datos" loading="lazy" />
                 <div className="gallery-topText">
                     <h4>Sincronización de datos</h4>
                 </div>
@@ -160,7 +159,7 @@ const Gallery = () => {
             </div>
 
             <div id="gallery-third" className="gallery-background2">
-                <img src={gbg3} alt="SaaS a medida" />
+                <img src={gbg3} alt="SaaS a medida" loading="lazy" />
                 <div className="gallery-topText">
                     <h4>SaaS a medida</h4>
                 </div>

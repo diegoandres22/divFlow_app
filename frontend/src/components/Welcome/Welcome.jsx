@@ -49,8 +49,8 @@ const Welcome = () => {
             </div>
             <div className="flex md:flex-row flex-col justify-between items-center md:p-4 md:mt-20 mt-10">
                 <div className="flex flex-row justify-center items-center gap-1">
-                    <img src={w1} alt="DivFlow bot" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
-                    <img src={w2} alt="DivFlow bot" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
+                    <img src={w1} alt="DivFlow bot" loading="lazy" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
+                    <img src={w2} alt="DivFlow bot" loading="lazy" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
                 </div>
                 <div className="md:w-1/2 w-full md:mt-0 mt-10">
                     <p className="md:text-[2rem] text-[1.4rem] text-[#C9A68C] md:leading-[1.1] md:pr-24 font-normal leading-[26px] tracking-[-0.2px]">

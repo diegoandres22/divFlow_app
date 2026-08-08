@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
-import banner from '../../assets/background3.png';
+import banner from '../../assets/background3.jpg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ClickIndicator from '../MapLink/ClickIndicator';
 import Brand from '../Buttons/Brand';
+import { smoothScrollTo } from '../../lib/smoothScroll';
 
 
 const FooterBanner = () => {
@@ -36,11 +37,12 @@ const FooterBanner = () => {
     return (
         < div ref={fbConRef} className="w-screen h-dvh p-2 overflow-hidden" >
             <div className='w-full relative overflow-hidden rounded-4xl'>
-                <ClickIndicator active={active} />
+                <ClickIndicator active={active} label="Agendar llamada" />
                 <img
                     onMouseEnter={() => setActive(true)}
                     onMouseLeave={() => setActive(false)}
-                    ref={fbImgRef} src={banner} alt="" className='w-full h-full object-cover' />
+                    onClick={() => smoothScrollTo("#contact")}
+                    ref={fbImgRef} src={banner} alt="" loading="lazy" className='w-full h-full object-cover cursor-pointer' />
 
                 <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-7xl lg:text-[10vw] font-bold text-[#F5F0EA] whitespace-nowrap'><Brand /></h1>
                 <div className='absolute bottom-5 px-4 w-full'>

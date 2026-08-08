@@ -4,9 +4,9 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-import acImg1 from "../../assets/activities-1.png";
-import acImg2 from "../../assets/activities-2.png";
-import acImg3 from "../../assets/activities-3.png";
+import acImg1 from "../../assets/activities-1.jpg";
+import acImg2 from "../../assets/activities-2.jpg";
+import acImg3 from "../../assets/activities-3.jpg";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -23,14 +23,8 @@ const Showcase = () => {
         // the ScrollTrigger pin entirely there.
         if (!window.matchMedia("(min-width: 1024px)").matches) return;
 
-        // ✅ TARGET ONLY INNER IMAGES (NOT OUTER DIV)
-        const images = gsap.utils.toArray(".image-item");
-
         const totalWidth =
             imgConRef.current.scrollWidth - containerRef.current.offsetWidth;
-
-        let lastScroll = window.scrollY;
-        let velocity = 0;
 
         // ✅ Horizontal scroll animation (unchanged)
         gsap.to(imgConRef.current, {
@@ -88,6 +82,7 @@ const Showcase = () => {
                     <img
                         src={acImg1}
                         alt="Caso de uso 1"
+                        loading="lazy"
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[80vw] lg:w-[77vw] absolute bottom-6 left-4 lg:bottom-10 lg:left-5 flex justify-between items-start ">
@@ -108,6 +103,7 @@ const Showcase = () => {
                     <img
                         src={acImg2}
                         alt="Caso de uso 2"
+                        loading="lazy"
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[80vw] lg:w-[77vw] absolute bottom-6 left-4 lg:bottom-10 lg:left-5 flex justify-between items-start ">
@@ -128,6 +124,7 @@ const Showcase = () => {
                     <img
                         src={acImg3}
                         alt="Caso de uso 3"
+                        loading="lazy"
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[80vw] lg:w-[77vw] absolute bottom-6 left-4 lg:bottom-10 lg:left-5 flex justify-between items-start ">

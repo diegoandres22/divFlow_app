@@ -1,7 +1,5 @@
-import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-import { FaXTwitter } from "react-icons/fa6";
 
 import MarqueeText from '../Marquee/MarqueeText';
 import Brand from '../Buttons/Brand';
@@ -34,10 +32,42 @@ const Footer = () => {
 
             <div className="w-full flex flex-col lg:flex-row lg:justify-between items-center lg:items-center gap-6 lg:gap-0 mt-14 lg:mt-20">
                 <div className="flex justify-center items-center gap-1">
-                    <div className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5]'><FaGithub className="text-xl" /></div>
-                    <div className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5]'><FaInstagram className="text-xl" /></div>
-                    <div className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5]'><CiLinkedin className="text-xl" /></div>
-                    <div className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5]'><FaXTwitter className="text-xl" /></div>
+                    <a
+                        href="https://github.com/diegoandres22"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5] hover:border-[#E8734A] hover:text-[#E8734A] transition-colors duration-300'
+                    >
+                        <FaGithub className="text-xl" />
+                    </a>
+                    <a
+                        href="https://www.instagram.com/div_flow/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5] hover:border-[#E8734A] hover:text-[#E8734A] transition-colors duration-300'
+                    >
+                        <FaInstagram className="text-xl" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/diegovelasquez22"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5] hover:border-[#E8734A] hover:text-[#E8734A] transition-colors duration-300'
+                    >
+                        <CiLinkedin className="text-xl" />
+                    </a>
+                    <a
+                        href="https://www.tiktok.com/@div_flow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok"
+                        className='border-[1px] border-[#c4c1b9] rounded-full p-3 text-[#f2ede5] hover:border-[#E8734A] hover:text-[#E8734A] transition-colors duration-300'
+                    >
+                        <FaTiktok className="text-xl" />
+                    </a>
                 </div>
 
                 <div>

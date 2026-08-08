@@ -1,12 +1,19 @@
-# React + Vite
+# DivFlow — frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto Vite + React de la landing de DivFlow. Ver el [README de la raíz del repo](../README.md) para contexto general, estructura y notas de despliegue.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install      # instalar dependencias
+npm run dev      # servidor de desarrollo (Vite --host)
+npm run build    # build de producción a dist/
+npm run preview  # sirve el build de producción localmente
+npm run lint     # ESLint
+```
 
-## Expanding the ESLint configuration
+## Variables/config a tener en cuenta
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- El endpoint de Formspree está hardcodeado en `src/components/Contact/Contact.jsx` (`FORMSPREE_ENDPOINT`).
+- `vite.config.js` tiene `base: '/'` — pensado para desplegar en la raíz del dominio real (Vercel), no en un subpath de GitHub Pages.
+- `src/Router/Router.jsx` define una única ruta (`/`).

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdnowda";
 
 const Contact = () => {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [status, setStatus] = useState("idle");
+    const [consent, setConsent] = useState(false);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -12,6 +14,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!consent) return;
         setStatus("sending");
         try {
             const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -54,7 +57,7 @@ const Contact = () => {
                             value={form.name}
                             onChange={handleChange}
                             placeholder="¿Cómo te llamás?"
-                            className="bg-[#120D0A] border border-[#2a1f17] focus:border-[#E8734A] rounded-2xl px-5 py-3 text-[#F5F0EA] text-sm outline-none transition-colors duration-300"
+                            className="bg-[#120D0A] border border-[#2a1f17] focus:border-[#E8734A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8734A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D] rounded-2xl px-5 py-3 text-[#F5F0EA] text-sm transition-colors duration-300"
                         />
                     </div>
 
@@ -67,7 +70,7 @@ const Contact = () => {
                             value={form.email}
                             onChange={handleChange}
                             placeholder="vos@empresa.com"
-                            className="bg-[#120D0A] border border-[#2a1f17] focus:border-[#E8734A] rounded-2xl px-5 py-3 text-[#F5F0EA] text-sm outline-none transition-colors duration-300"
+                            className="bg-[#120D0A] border border-[#2a1f17] focus:border-[#E8734A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8734A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D] rounded-2xl px-5 py-3 text-[#F5F0EA] text-sm transition-colors duration-300"
                         />
                     </div>
 
@@ -80,13 +83,30 @@ const Contact = () => {
                             value={form.message}
                             onChange={handleChange}
                             placeholder="Quiero automatizar..."
-                            className="bg-[#120D0A] border border-[#2a1f17] focus:border-[#E8734A] rounded-2xl px-5 py-3 text-[#F5F0EA] text-sm outline-none resize-none transition-colors duration-300"
+                            className="bg-[#120D0A] border border-[#2a1f17] focus:border-[#E8734A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8734A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D] rounded-2xl px-5 py-3 text-[#F5F0EA] text-sm resize-none transition-colors duration-300"
                         />
                     </div>
 
+                    <label className="flex items-start gap-3 text-[#C9A68C] text-xs cursor-pointer select-none">
+                        <input
+                            type="checkbox"
+                            required
+                            checked={consent}
+                            onChange={(e) => setConsent(e.target.checked)}
+                            className="mt-0.5 w-4 h-4 shrink-0 accent-[#E8734A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8734A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D] rounded"
+                        />
+                        <span>
+                            Acepto la{" "}
+                            <Link to="/privacidad" target="_blank" rel="noopener noreferrer" className="text-[#E8734A] underline">
+                                Política de Privacidad
+                            </Link>{" "}
+                            y entiendo que mis datos van a ser procesados por Formspree para poder responderte.
+                        </span>
+                    </label>
+
                     <button
                         type="submit"
-                        disabled={status === "sending"}
+                        disabled={status === "sending" || !consent}
                         className="mt-2 w-full md:w-fit self-start rounded-full px-8 py-3 text-sm font-bold bg-[#E8734A] text-[#1A120D] hover:bg-[#f08a63] transition-colors duration-300 disabled:opacity-60"
                     >
                         {status === "sending" ? "Enviando..." : "Enviar mensaje"}
