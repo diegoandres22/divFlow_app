@@ -116,7 +116,7 @@ const Gallery = () => {
     };
 
     return (
-        <section className="gallery-page4" ref={pageRef}>
+        <section id="casos-de-uso" className="gallery-page4" ref={pageRef}>
             <div className="gallery-slider">
                 <div
                     className="gallery-box"

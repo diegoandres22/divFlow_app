@@ -17,64 +17,90 @@ const StickyCols = () => {
         // stacked flow (see index.css), so skip the pin/scrub timeline entirely.
         if (!window.matchMedia("(min-width: 1024px)").matches) return;
 
-        // 1️⃣ Split text lines once DOM ready
-        const textElements = document.querySelectorAll(".col-3 h1, .col-3 p");
-        textElements.forEach((element) => {
-            const split = new SplitText(element, { type: "lines", linesClass: "line" });
-            split.lines.forEach((line) => {
-                line.innerHTML = `<span>${line.textContent}</span>`;
+        // Explicit starting state for the 4 pinned panels — don't rely on the
+        // CSS `revert-layer` transform alone. If ScrollTrigger measures the
+        // page before layout/fonts/lazy images settle, its math can desync
+        // from that CSS-implied state and panels end up stuck mid-animation
+        // (e.g. col-4's image visible with no paired col-3 text). Inline
+        // styles from gsap.set() always win over the CSS class either way.
+        gsap.set(".col-1", { x: "0%", y: "0%", opacity: 1, scale: 1 });
+        gsap.set(".col-2", { x: "100%", y: "0%", opacity: 1, scale: 1 });
+        gsap.set(".col-3", { x: "100%", y: "100%", opacity: 1, scale: 1 });
+        gsap.set(".col-4", { x: "100%", y: "100%" });
+
+        let tl;
+        let splits = [];
+
+        // SplitText measures line breaks using whatever font is active at the
+        // moment it runs. If it runs before the real webfont has loaded (very
+        // likely — DevTools was logging "SplitText called before fonts
+        // loaded"), it splits using fallback-font metrics. When the real font
+        // swaps in, line breaks shift but the split spans don't, so the
+        // ScrollTrigger.refresh() right after locks in stale measurements —
+        // which desyncs the whole pinned timeline below. Waiting for
+        // document.fonts.ready fixes it at the source.
+        document.fonts.ready.then(() => {
+            // 1️⃣ Split text lines once fonts are actually ready
+            const textElements = document.querySelectorAll(".col-3 h1, .col-3 p");
+            textElements.forEach((element) => {
+                const split = new SplitText(element, { type: "lines", linesClass: "line" });
+                splits.push(split);
+                split.lines.forEach((line) => {
+                    line.innerHTML = `<span>${line.textContent}</span>`;
+                });
             });
+
+            // Refresh ScrollTrigger after split
+            ScrollTrigger.refresh();
+
+            // 2️⃣ Initial state
+            gsap.set(".col-3 .col-content-wrapper .line span", { yPercent: 0 });
+            gsap.set(".col-3 .col-content-wrapper-2 .line span", { yPercent: -125 });
+
+            // 3️⃣ Controlled phase logic using timeline (simpler and stable)
+            tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".sticky-cols",
+                    start: "top 20%",
+                    end: "+=90%",
+                    pin: true,
+                    scrub: 1,
+                    // markers: true,
+                },
+            });
+            tl.add(() => setReveal(false));
+            // PHASE 1: Reveal col-2, hide col-1
+            tl.to(".col-1", { opacity: 0, scale: 0.8, duration: 0.8 })
+                .to(".col-2", { x: "0%", duration: 0.8 }, "<")
+                .to(".col-3", { y: "0%", duration: 0.8 }, "<")
+                .to(".col-img-1 img", { scale: 1, duration: 0.8 }, "<")
+                .to(".col-img-2", {
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                    duration: 0.8,
+                }, "<")
+                .to(".col-img-2 img", { scale: 1.6, duration: 0.8 }, "<")
+
+            tl.add(() => setReveal(false));
+            tl.add(() => setReveal(true));
+            // PHASE 2: Switch col-2 -> col-3 content
+            tl.to(".col-2", { opacity: 0, scale: 0.8, duration: 0.8 })
+                .to(".col-3 .col-content-wrapper .line span", {
+                    yPercent: -125,
+                    duration: 0.8,
+                }, "<")
+            tl.to(".col-3", { x: "0%", duration: 0.8 }, "-=0.8")
+                .to(".col-4", { y: "0%", duration: 0.8 }, "<")
+                .to(".col-3 .col-content-wrapper-2 .line span", {
+                    yPercent: 0,
+                    delay: 0.4,
+                    duration: 0.8,
+                }, "<");
         });
-
-        // Refresh ScrollTrigger after split
-        ScrollTrigger.refresh();
-
-        // 2️⃣ Initial state
-        gsap.set(".col-3 .col-content-wrapper .line span", { yPercent: 0 });
-        gsap.set(".col-3 .col-content-wrapper-2 .line span", { yPercent: -125 });
-
-        // 3️⃣ Controlled phase logic using timeline (simpler and stable)
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".sticky-cols",
-                start: "top 20%",
-                end: "+=90%",
-                pin: true,
-                scrub: 1,
-                // markers: true,
-            },
-        });
-        tl.add(() => setReveal(false));
-        // PHASE 1: Reveal col-2, hide col-1
-        tl.to(".col-1", { opacity: 0, scale: 0.8, duration: 0.8 })
-            .to(".col-2", { x: "0%", duration: 0.8 }, "<")
-            .to(".col-3", { y: "0%", duration: 0.8 }, "<")
-            .to(".col-img-1 img", { scale: 1, duration: 0.8 }, "<")
-            .to(".col-img-2", {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                duration: 0.8,
-            }, "<")
-            .to(".col-img-2 img", { scale: 1.6, duration: 0.8 }, "<")
-
-        tl.add(() => setReveal(false));
-        tl.add(() => setReveal(true));
-        // PHASE 2: Switch col-2 -> col-3 content
-        tl.to(".col-2", { opacity: 0, scale: 0.8, duration: 0.8 })
-            .to(".col-3 .col-content-wrapper .line span", {
-                yPercent: -125,
-                duration: 0.8,
-            }, "<")
-        tl.to(".col-3", { x: "0%", duration: 0.8 }, "-=0.8")
-            .to(".col-4", { y: "0%", duration: 0.8 }, "<")
-            .to(".col-3 .col-content-wrapper-2 .line span", {
-                yPercent: 0,
-                delay: 0.4,
-                duration: 0.8,
-            }, "<");
 
         return () => {
             ScrollTrigger.getAll().forEach((st) => st.kill());
-            tl.kill();
+            splits.forEach((s) => s.revert());
+            if (tl) tl.kill();
         };
     });
 

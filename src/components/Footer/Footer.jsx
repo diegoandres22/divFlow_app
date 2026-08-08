@@ -22,11 +22,11 @@ const Footer = () => {
                 </h3>
 
                 <div className='flex flex-col justify-center lg:items-end gap-1 lg:gap-0'>
-                    <a href="#welcome" className='text-[#f2ede5] text-lg lg:text-2xl'>Inicio</a>
-                    <a href="#welcome" className='text-[#f2ede5] text-lg lg:text-2xl'>Servicios</a>
-                    <a href="#welcome" className='text-[#f2ede5] text-lg lg:text-2xl'>Casos de uso</a>
-                    <a href="#welcome" className='text-[#f2ede5] text-lg lg:text-2xl'>Por qué DivFlow</a>
-                    <a href="#welcome" className='text-[#f2ede5] text-lg lg:text-2xl'>Apps</a>
+                    <a href="#hero" onClick={(e) => { e.preventDefault(); smoothScrollTo("#hero"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Inicio</a>
+                    <a href="#servicios" onClick={(e) => { e.preventDefault(); smoothScrollTo("#servicios"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Servicios</a>
+                    <a href="#casos-de-uso" onClick={(e) => { e.preventDefault(); smoothScrollTo("#casos-de-uso"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Casos de uso</a>
+                    <a href="#por-que-divflow" onClick={(e) => { e.preventDefault(); smoothScrollTo("#por-que-divflow"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Por qué DivFlow</a>
+                    <a href="#apps" onClick={(e) => { e.preventDefault(); smoothScrollTo("#apps"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Apps</a>
                 </div>
             </div>
 

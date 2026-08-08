@@ -61,12 +61,12 @@ const Choose = () => {
     });
 
     return (
-        <section className="choose-section w-full min-h-dvh lg:h-dvh p-6 lg:p-8 pt-10 overflow-hidden">
+        <section id="por-que-divflow" className="choose-section w-full min-h-dvh lg:h-dvh p-6 lg:p-8 pt-10 overflow-hidden">
             <p className='text-[.7rem] text-[#eae5dd] choose-subtitle'>Conocé <Brand />®</p>
             <div className="lg:mt-10 mt-7 title-part origin-bottom ">
                 {
                     chooseLines.map((line, index) => (
-                        <h1 key={index} className={`choose-heading text-[#F5F0EA] lg:text-[9.5rem] text-[3rem] leading-[0.9]`} font-medium tracking-tighter choose-title>
+                        <h1 key={index} className="choose-heading choose-title text-[#F5F0EA] lg:text-[9.5rem] text-[3rem] leading-[0.9] font-medium tracking-tighter">
                             <span className={`choose-title-break ${index == 1 ? "lg:pb-3 pb-2" : ""}`}>{line}<span className={`choose-title-clip ${index == 1 ? "lg:pb-3 pb-2" : ""}`}>{line}</span></span>
                         </h1>
                     ))

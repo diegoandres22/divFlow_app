@@ -5,11 +5,11 @@ import { smoothScrollTo } from "../../lib/smoothScroll";
 const apps = [
     {
         name: "DivFlow Ecommerce",
-        price: "USD 49",
+        price: "USD 69",
         period: "/ mes",
-        description: "Tienda online lista para vender: catálogo, carrito, checkout y panel de pedidos, sin desarrollar nada desde cero.",
+        description: "Tienda online lista para vender: catálogo, carrito, checkout y panel de pedidos, todo listo para empezar a vender.",
         features: [
-            "Catálogo de productos ilimitado",
+            "Catálogo de 1000 productos ",
             "Carrito y checkout integrados",
             "Panel simple para gestionar pedidos",
             "Alta en menos de 48hs",
@@ -23,7 +23,7 @@ const apps = [
 
 const Cards = () => {
     return (
-        <section className="pricing-section w-full p-8 mt-16 mb-20">
+        <section id="apps" className="pricing-section w-full p-8 mt-16 mb-20">
             <p className="text-[.7rem] font-bold text-[#eae5dd]">Apps listas para usar</p>
             <h2 className="text-[#F5F0EA] lg:text-[4rem] text-[2.2rem] font-medium tracking-tighter mt-2 mb-4 leading-[1.05]">
                 Alquilá una app que<br />ya está funcionando

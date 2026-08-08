@@ -19,53 +19,64 @@ const FooterTitle = () => {
         // Get the original HTML before splitting
         const originalHTML = ftConRef.current.querySelector(".footer-title h1").innerHTML;
 
-        // Create split - exclude the sub element from being split
-        const split = new SplitText(".footer-title h1", {
-            type: "chars",
-            charsClass: "ftChar",
-            // Exclude the <sub> element from being split
-            exclude: "sub"
-        });
+        let split;
 
-        // Wrap each character in a span for animation
-        split.chars.forEach(char => {
-            char.innerHTML = `<span>${char.innerHTML}</span>`;
-        });
+        // Splitting before the real webfont is active measures characters
+        // with fallback-font metrics, so widths/positions can shift once the
+        // real font swaps in. Waiting for document.fonts.ready avoids that.
+        document.fonts.ready.then(() => {
+            if (!ftConRef.current) return;
 
-        const innerChars = split.chars.map(c => c.querySelector("span"));
+            // Create split - exclude the sub element from being split
+            split = new SplitText(".footer-title h1", {
+                type: "chars",
+                charsClass: "ftChar",
+                // Exclude the <sub> element from being split
+                exclude: "sub"
+            });
 
-        // Handle the sub element separately
-        const sub = ftConRef.current.querySelector(".footer-title sub");
-        if (sub) {
-            sub.innerHTML = `<span>${sub.innerHTML}</span>`;
-            const subSpan = sub.querySelector("span");
+            // Wrap each character in a span for animation
+            split.chars.forEach(char => {
+                char.innerHTML = `<span>${char.innerHTML}</span>`;
+            });
 
-            // Add to innerChars array
-            innerChars.push(subSpan);
-        }
+            const innerChars = split.chars.map(c => c.querySelector("span"));
 
-        // Initial state - start from left (-120%)
-        gsap.set(innerChars, { x: "-120%" });
+            // Handle the sub element separately
+            const sub = ftConRef.current.querySelector(".footer-title sub");
+            if (sub) {
+                sub.innerHTML = `<span>${sub.innerHTML}</span>`;
+                const subSpan = sub.querySelector("span");
 
-        // Animation - move to normal position
-        gsap.to(innerChars, {
-            x: "0%",
-            stagger: 0.02, // Add stagger for character-by-character reveal
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: ftConRef.current,
-                start: "top 90%",
-                end: "top 80%",
-                scrub: true,
-                // markers: true
+                // Add to innerChars array
+                innerChars.push(subSpan);
             }
+
+            // Initial state - start from left (-120%)
+            gsap.set(innerChars, { x: "-120%" });
+
+            // Animation - move to normal position
+            gsap.to(innerChars, {
+                x: "0%",
+                stagger: 0.02, // Add stagger for character-by-character reveal
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ftConRef.current,
+                    start: "top 90%",
+                    end: "top 80%",
+                    scrub: true,
+                    // markers: true
+                }
+            });
         });
 
         // Cleanup - revert the split and restore original HTML
         return () => {
-            split.revert();
+            if (split) split.revert();
             // Restore the original HTML with sub element
-            ftConRef.current.querySelector(".footer-title h1").innerHTML = originalHTML;
+            if (ftConRef.current) {
+                ftConRef.current.querySelector(".footer-title h1").innerHTML = originalHTML;
+            }
         };
 
     }, { scope: ftConRef });
