@@ -83,7 +83,7 @@ const Hero = () => {
                                 className="md:w-[20%] w-[80%] text-[#F5F0EA] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
                                 style={{ textShadow: '2px 2px 4px #000' }}
                             >
-                                Construimos productos SaaS y flujos automatizados que hacen crecer tu operación sin fricción—DivFlow.
+                                Construimos productos SaaS y flujos automatizados que hacen crecer tu operación sin fricción—<Brand />.
                             </p>
                         </div>
                     </div>

@@ -25,7 +25,7 @@ const Footer = () => {
                     <a href="#hero" onClick={(e) => { e.preventDefault(); smoothScrollTo("#hero"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Inicio</a>
                     <a href="#servicios" onClick={(e) => { e.preventDefault(); smoothScrollTo("#servicios"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Servicios</a>
                     <a href="#casos-de-uso" onClick={(e) => { e.preventDefault(); smoothScrollTo("#casos-de-uso"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Casos de uso</a>
-                    <a href="#por-que-divflow" onClick={(e) => { e.preventDefault(); smoothScrollTo("#por-que-divflow"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Por qué DivFlow</a>
+                    <a href="#por-que-divflow" onClick={(e) => { e.preventDefault(); smoothScrollTo("#por-que-divflow"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Por qué <Brand /></a>
                     <a href="#apps" onClick={(e) => { e.preventDefault(); smoothScrollTo("#apps"); }} className='text-[#f2ede5] hover:text-[#E8734A] text-lg lg:text-2xl transition-colors duration-300'>Apps</a>
                 </div>
             </div>

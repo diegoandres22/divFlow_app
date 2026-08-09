@@ -60,7 +60,7 @@ const FooterBanner = () => {
                             className="md:w-[20%] w-[80%] text-[#F5F0EA] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
                             style={{ textShadow: '2px 2px 4px #000' }}
                         >
-                            Agendá una llamada y te mostramos cómo DivFlow puede simplificar tu operación.
+                            Agendá una llamada y te mostramos cómo <Brand /> puede simplificar tu operación.
                         </p>
                     </div>
                 </div>

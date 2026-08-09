@@ -4,7 +4,7 @@ import { smoothScrollTo } from "../../lib/smoothScroll";
 
 const apps = [
     {
-        name: "DivFlow Ecommerce",
+        name: <><Brand /> Ecommerce</>,
         price: "USD 69",
         period: "/ mes",
         description: "Tienda online lista para vender: catálogo, carrito, checkout y panel de pedidos, todo listo para empezar a vender.",
@@ -18,6 +18,20 @@ const apps = [
         highlighted: true,
         ctaLabel: "Quiero alquilarla",
         demoUrl: "https://divflowecommerce.vercel.app/",
+    },
+    {
+        name: "Automatizaciones n8n",
+        price: "Cotizar",
+        period: "",
+        description: "Automatizamos el proceso que te esté quitando tiempo, sin importar el tamaño: desde una tarea puntual hasta un flujo que conecta varios sistemas. El alcance define el costo, por eso no hay un precio fijo.",
+        features: [
+            "Alcance 100% a medida de tu proceso",
+            "Desde una automatización puntual hasta flujos complejos",
+            "Conectamos las herramientas que ya usás",
+            "Cotización según complejidad, sin sorpresas",
+        ],
+        highlighted: false,
+        ctaLabel: "Cotizar mi automatización",
     },
 ];
 

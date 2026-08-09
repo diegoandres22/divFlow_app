@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import LegalLayout from "../../layouts/LegalLayout";
+import { useDocumentMeta } from "../../lib/useDocumentMeta";
 
 const Terminos = () => {
+    useDocumentMeta(
+        "Términos y Condiciones — DivFlow",
+        "Términos y condiciones de uso de los servicios y apps de DivFlow."
+    );
+
     return (
-        <LegalLayout title="Términos y Condiciones" updatedAt="[COMPLETAR FECHA]">
+        <LegalLayout title="Términos y Condiciones" updatedAt="18/3/2024">
             <p className="text-[#F0B08C] text-xs italic">
                 Este documento es una base estándar y no reemplaza la revisión de un abogado.
                 Antes de publicar, hay que completar los datos marcados como [COMPLETAR] y validar
@@ -13,7 +19,7 @@ const Terminos = () => {
             <section>
                 <h2 className="text-xl font-bold text-[#F5F0EA] mb-2">1. Quiénes somos</h2>
                 <p>
-                    Este sitio es operado por DivFlow, marca personal de [COMPLETAR NOMBRE COMPLETO].
+                    Este sitio es operado por DivFlow, marca personal de Diego Andrés de Jesús Velásquez Moya.
                     Al usar este sitio o contratar alguno de sus servicios, aceptás estos Términos y
                     Condiciones.
                 </p>
@@ -68,7 +74,7 @@ const Terminos = () => {
             <section>
                 <h2 className="text-xl font-bold text-[#F5F0EA] mb-2">6. Ley aplicable</h2>
                 <p>
-                    Estos términos se rigen por las leyes de [COMPLETAR PAÍS/JURISDICCIÓN]. Cualquier
+                    Estos términos se rigen por las leyes de la República Bolivariana de Venezuela. Cualquier
                     disputa se someterá a los tribunales competentes de esa jurisdicción, salvo que la
                     ley aplicable indique lo contrario.
                 </p>

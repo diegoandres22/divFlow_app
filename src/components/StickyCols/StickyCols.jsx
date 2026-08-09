@@ -1,200 +1,86 @@
-import gsap, { ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 import colimg1 from "../../assets/cap1-square.jpg";
 import colimg2 from "../../assets/cap2-square.jpg";
 import colimg3 from "../../assets/cap3-square.jpg";
-import { useState } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
+
+// Simple, robust scroll reveal — no pin, no SplitText, no shared classnames
+// between blocks. Each block animates itself independently via its own ref,
+// so there's no selector collision risk and nothing to desync.
 const StickyCols = () => {
-
-    const [reveal, setReveal] = useState(false);
+    const sectionRef = useRef(null);
+    const block1Ref = useRef(null);
+    const block2Ref = useRef(null);
 
     useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger, SplitText);
-
-        // Desktop-only: the pinned/overlapping scroll-jack layout is designed
-        // for large screens. On mobile the section renders as a normal
-        // stacked flow (see index.css), so skip the pin/scrub timeline entirely.
-        if (!window.matchMedia("(min-width: 1024px)").matches) return;
-
-        // Explicit starting state for the 4 pinned panels — don't rely on the
-        // CSS `revert-layer` transform alone. If ScrollTrigger measures the
-        // page before layout/fonts/lazy images settle, its math can desync
-        // from that CSS-implied state and panels end up stuck mid-animation
-        // (e.g. col-4's image visible with no paired col-3 text). Inline
-        // styles from gsap.set() always win over the CSS class either way.
-        gsap.set(".col-1", { x: "0%", y: "0%", opacity: 1, scale: 1 });
-        gsap.set(".col-2", { x: "100%", y: "0%", opacity: 1, scale: 1 });
-        gsap.set(".col-3", { x: "100%", y: "100%", opacity: 1, scale: 1 });
-        gsap.set(".col-4", { x: "100%", y: "100%" });
-
-        let tl;
-        let splits = [];
-
-        // SplitText measures line breaks using whatever font is active at the
-        // moment it runs. If it runs before the real webfont has loaded (very
-        // likely — DevTools was logging "SplitText called before fonts
-        // loaded"), it splits using fallback-font metrics. When the real font
-        // swaps in, line breaks shift but the split spans don't, so the
-        // ScrollTrigger.refresh() right after locks in stale measurements —
-        // which desyncs the whole pinned timeline below. Waiting for
-        // document.fonts.ready fixes it at the source.
-        document.fonts.ready.then(() => {
-            // 1️⃣ Split text lines once fonts are actually ready
-            const textElements = document.querySelectorAll(".col-3 h1, .col-3 p");
-            textElements.forEach((element) => {
-                const split = new SplitText(element, { type: "lines", linesClass: "line" });
-                splits.push(split);
-                split.lines.forEach((line) => {
-                    line.innerHTML = `<span>${line.textContent}</span>`;
-                });
-            });
-
-            // Refresh ScrollTrigger after split
-            ScrollTrigger.refresh();
-
-            // 2️⃣ Initial state
-            gsap.set(".col-3 .col-content-wrapper .line span", { yPercent: 0 });
-            gsap.set(".col-3 .col-content-wrapper-2 .line span", { yPercent: -125 });
-
-            // 3️⃣ Controlled phase logic using timeline (simpler and stable)
-            tl = gsap.timeline({
+        [block1Ref.current, block2Ref.current].forEach((el) => {
+            if (!el) return;
+            gsap.from(el, {
+                opacity: 0,
+                y: 60,
+                duration: 1,
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: ".sticky-cols",
-                    start: "top 20%",
-                    end: "+=90%",
-                    pin: true,
-                    scrub: 1,
-                    // markers: true,
+                    trigger: el,
+                    start: "top 85%",
+                    end: "top 55%",
+                    scrub: true,
                 },
             });
-            tl.add(() => setReveal(false));
-            // PHASE 1: Reveal col-2, hide col-1
-            tl.to(".col-1", { opacity: 0, scale: 0.8, duration: 0.8 })
-                .to(".col-2", { x: "0%", duration: 0.8 }, "<")
-                .to(".col-3", { y: "0%", duration: 0.8 }, "<")
-                .to(".col-img-1 img", { scale: 1, duration: 0.8 }, "<")
-                .to(".col-img-2", {
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 0.8,
-                }, "<")
-                .to(".col-img-2 img", { scale: 1.6, duration: 0.8 }, "<")
-
-            tl.add(() => setReveal(false));
-            tl.add(() => setReveal(true));
-            // PHASE 2: Switch col-2 -> col-3 content
-            tl.to(".col-2", { opacity: 0, scale: 0.8, duration: 0.8 })
-                .to(".col-3 .col-content-wrapper .line span", {
-                    yPercent: -125,
-                    duration: 0.8,
-                }, "<")
-            tl.to(".col-3", { x: "0%", duration: 0.8 }, "-=0.8")
-                .to(".col-4", { y: "0%", duration: 0.8 }, "<")
-                .to(".col-3 .col-content-wrapper-2 .line span", {
-                    yPercent: 0,
-                    delay: 0.4,
-                    duration: 0.8,
-                }, "<");
         });
-
-        return () => {
-            ScrollTrigger.getAll().forEach((st) => st.kill());
-            splits.forEach((s) => s.revert());
-            if (tl) tl.kill();
-        };
-    });
+    }, { scope: sectionRef });
 
     return (
-        <section className="sticky-cols w-screen h-dvh overflow-hidden bg-[#120D0A] lg:mb-20">
-            <div className="sticky-cols-wrapper relative w-full h-screen">
-                <div className="col col-1">
-                    <div className="col-content">
-                        <div className="col-content-wrapper">
-                            <h1 className="text-2xl text-[#C9A68C] font-bold leading-auto">Visibilidad total
-                                <br />
-                                sobre cada—proceso
-                                <br />
-                                automatizado, en
-                                <br />
-                                un solo panel
-                            </h1>
-                            <div className="col-content-para flex items-center gap-4 justify-between">
-                                <div className="flex items-center gap-0 justify-center">
-                                    <h3 className="border-1 px-3 py-1 rounded-full text-[#aaa091]">1</h3>
-                                    <h3 className="border-1 px-3 py-1 rounded-full text-[#524e4b]">3</h3>
-                                </div>
-                                <p className={`text-[12px] font-medium  ${!reveal ? "mr-6" : "mr-0"}`}> Mirá en tiempo real cada flujo corriendo
-                                    <br />
-                                    sin sorpresas y con trazabilidad completa.
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
+        <section ref={sectionRef} className="w-full px-6 py-16 lg:py-24 flex flex-col gap-16 lg:gap-24 overflow-hidden bg-[#120D0A]">
+            {/* Block 1 */}
+            <div ref={block1Ref} className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                <div className="w-full lg:w-1/2">
+                    <h3 className="text-[#F5F0EA] text-2xl lg:text-4xl font-bold leading-tight mb-4">
+                        Visibilidad total sobre cada proceso automatizado, en un solo panel
+                    </h3>
+                    <p className="text-[#C9A68C] text-sm lg:text-base">
+                        Mirá en tiempo real cada flujo corriendo sin sorpresas y con trazabilidad completa.
+                    </p>
                 </div>
-                <div className="col col-2">
-                    <div className="col-img col-img-1">
-                        <div className="col-img-wrapper">
-                            <img src={colimg1} alt="img" loading="lazy" />
-                        </div>
-                    </div>
-                    <div className="col col-img-2 p-2">
-                        <div className="col-img-wrapper">
-                            <img src={colimg2} alt="img" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-                <div className="col col-3">
-                    <div className="col-content-wrapper">
-                        <h1 className="text-2xl font-bold leading-auto">Trazabilidad
-                            <br />
-                            completa en—cada
-                            <br />
-                            paso del flujo
-                            <br />
-                            automatizado
-                        </h1>
-                        <div className={`col-content-para flex items-center gap-4 justify-between ${reveal ? "ml-0" : "ml-6"}`}>
-                            <div className="flex items-center gap-0 justify-center">
-                                <h3 className="border-1 px-3 py-1 rounded-full text-[#aaa091]">{(reveal) ? "3" : "2"}</h3>
-                                <h3 className="border-1 px-3 py-1 rounded-full text-[#524e4b]">3</h3>
-                            </div>
-                            <p className="text-[12px] font-medium"> Sabés qué pasó, cuándo y por qué
-                                <br />
-                                sin depender de nadie para entenderlo.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-content-wrapper-2">
-                        <h1 className="text-2xl font-bold leading-auto">Trazabilidad
-                            <br />
-                            completa en—cada
-                            <br />
-                            paso del flujo
-                            <br />
-                            automatizado
-                        </h1>
-                        <div className="col-content-para flex items-center gap-4 justify-between">
-                            <div className="flex items-center gap-0 justify-center">
-                                {/* <h3 className="border-1 px-3 py-1 rounded-full text-[#aaa091]">3</h3>
-                                <h3 className="border-1 px-3 py-1 rounded-full text-[#524e4b]">3</h3> */}
-                            </div>
-                            <p className={`text-[12px] font-medium  ${!reveal ? "mr-0" : "mr-6"}`}> Sabés qué pasó, cuándo y por qué
-                                <br />
-                                sin depender de nadie para entenderlo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col col-4">
-                    <div className="col-img col-img-1">
-                        <div className="col-img-wrapper">
-                            <img src={colimg3} alt="img" loading="lazy" />
-                        </div>
-                    </div>
+                <div className="w-full lg:w-1/2 flex gap-3">
+                    <img
+                        src={colimg1}
+                        alt="Panel de control de flujos DivFlow"
+                        loading="lazy"
+                        className="w-1/2 h-[28vh] lg:h-[40vh] object-cover rounded-[2rem]"
+                    />
+                    <img
+                        src={colimg2}
+                        alt="Sincronización de datos DivFlow"
+                        loading="lazy"
+                        className="w-1/2 h-[28vh] lg:h-[40vh] object-cover rounded-[2rem] mt-6"
+                    />
                 </div>
             </div>
 
+            {/* Block 2 */}
+            <div ref={block2Ref} className="w-full flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16">
+                <div className="w-full lg:w-1/2">
+                    <h3 className="text-[#F5F0EA] text-2xl lg:text-4xl font-bold leading-tight mb-4">
+                        Trazabilidad completa en cada paso del flujo automatizado
+                    </h3>
+                    <p className="text-[#C9A68C] text-sm lg:text-base">
+                        Sabés qué pasó, cuándo y por qué sin depender de nadie para entenderlo.
+                    </p>
+                </div>
+                <div className="w-full lg:w-1/2">
+                    <img
+                        src={colimg3}
+                        alt="Monitoreo de flujos DivFlow"
+                        loading="lazy"
+                        className="w-full h-[32vh] lg:h-[45vh] object-cover rounded-[2rem]"
+                    />
+                </div>
+            </div>
         </section>
     );
 };

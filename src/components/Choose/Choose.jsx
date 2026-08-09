@@ -79,7 +79,7 @@ const Choose = () => {
                 <div className='lg:w-1/2 w-full'>
                     <div className=" lg:w-[30%] w-[60%]">
                         <p className="text-[.7rem] text-[#eae5dd]">Todo lo que construimos
-                            en DivFlow comparte estos principios:</p>
+                            en <Brand /> comparte estos principios:</p>
                     </div>
                     <div className="flex flex-1 flex-wrap justify-start items-start gap-2 mt-8">
                         <div className="border-[1px] border-[#C9A68C] text-[#C9A68C] lg:text-[2rem] px-[20px] py-[4px] rounded-full">

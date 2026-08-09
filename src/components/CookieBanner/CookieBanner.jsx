@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { initMetaPixel } from "../../lib/metaPixel";
 
 const STORAGE_KEY = "divflow_cookie_consent";
 
@@ -8,11 +9,17 @@ const CookieBanner = () => {
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (!stored) setVisible(true);
+        // Returning visitor who already said yes — load the pixel without
+        // making them click "Aceptar" again.
+        if (stored === "accepted") initMetaPixel();
     }, []);
 
     const handleChoice = (value) => {
         localStorage.setItem(STORAGE_KEY, value);
         setVisible(false);
+        // Only load tracking scripts on explicit "Aceptar" — never on
+        // "Rechazar", and never before either button is clicked.
+        if (value === "accepted") initMetaPixel();
     };
 
     if (!visible) return null;
@@ -21,8 +28,8 @@ const CookieBanner = () => {
         <div className="fixed bottom-0 left-0 right-0 z-[9999] p-4 lg:p-6 flex justify-center">
             <div className="w-full max-w-3xl bg-[#1A120D] border border-[#2a1f17] rounded-2xl lg:rounded-3xl px-6 py-5 flex flex-col lg:flex-row items-center gap-4 shadow-2xl">
                 <p className="text-[#eae5dd] text-xs lg:text-sm text-center lg:text-left flex-1">
-                    Usamos almacenamiento local para recordar tus preferencias en este sitio. No usamos
-                    cookies de seguimiento ni de terceros por el momento. Más info en nuestra{" "}
+                    Usamos Meta Pixel para medir el rendimiento de nuestras campañas y almacenamiento
+                    local para recordar tu preferencia. Solo se activa si aceptás. Más info en nuestra{" "}
                     <a href="/privacidad#cookies" className="text-[#E8734A] underline">
                         Política de Cookies
                     </a>.

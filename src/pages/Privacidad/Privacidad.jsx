@@ -1,8 +1,14 @@
 import LegalLayout from "../../layouts/LegalLayout";
+import { useDocumentMeta } from "../../lib/useDocumentMeta";
 
 const Privacidad = () => {
+    useDocumentMeta(
+        "Política de Privacidad — DivFlow",
+        "Política de privacidad de DivFlow: qué datos recogemos, cómo los usamos y tus derechos."
+    );
+
     return (
-        <LegalLayout title="Política de Privacidad" updatedAt="[COMPLETAR FECHA]">
+        <LegalLayout title="Política de Privacidad" updatedAt="18/3/2024">
             <p className="text-[#F0B08C] text-xs italic">
                 Este documento es una base estándar y no reemplaza la revisión de un abogado.
                 Antes de publicar, hay que completar los datos marcados como [COMPLETAR] y validar
@@ -12,8 +18,8 @@ const Privacidad = () => {
             <section>
                 <h2 className="text-xl font-bold text-[#F5F0EA] mb-2">1. Responsable del tratamiento</h2>
                 <p>
-                    DivFlow es la marca personal de [COMPLETAR NOMBRE COMPLETO], con domicilio en
-                    [COMPLETAR CIUDAD, PAÍS]. Para cualquier consulta relacionada con esta política o
+                    DivFlow es la marca personal de Diego Andrés de Jesús Velásquez Moya, con domicilio en
+                    Caraballeda, La Guaira, Venezuela. Para cualquier consulta relacionada con esta política o
                     con tus datos personales, podés escribir a{" "}
                     <a href="mailto:diego.a.v3005@gmail.com" className="text-[#E8734A] underline">
                         diego.a.v3005@gmail.com
@@ -69,17 +75,22 @@ const Privacidad = () => {
             <section id="cookies">
                 <h2 className="text-xl font-bold text-[#F5F0EA] mb-2">6. Política de Cookies</h2>
                 <p>
-                    Este sitio, en su versión actual, no utiliza cookies de analítica, publicidad ni
-                    seguimiento de terceros (por ejemplo, Google Analytics o Meta Pixel). Solo se
-                    guarda en tu navegador una preferencia técnica (mediante <code>localStorage</code>,
-                    no una cookie tradicional) para recordar si ya aceptaste o rechazaste el aviso de
-                    cookies, y así no volver a mostrártelo en cada visita.
+                    Se guarda en tu navegador una preferencia técnica (mediante <code>localStorage</code>,
+                    no una cookie tradicional) para recordar si ya aceptaste o rechazaste este aviso, y
+                    así no volver a mostrártelo en cada visita.
                 </p>
                 <p className="mt-3">
-                    Si en el futuro se incorpora algún servicio de analítica o publicidad, esta sección
-                    se va a actualizar para detallar qué cookies se agregan, con qué finalidad, y ese
-                    tipo de trackers solo se van a activar después de que aceptes el aviso
-                    correspondiente.
+                    Si aceptás el aviso de cookies, este sitio activa el <strong>Meta Pixel</strong> (Meta/Facebook),
+                    una herramienta de medición publicitaria que nos permite entender qué visitantes
+                    completan el formulario de contacto y mostrar anuncios más relevantes en Instagram y
+                    Facebook. Meta puede establecer sus propias cookies en tu navegador para esto. Además,
+                    si completás el formulario de contacto, tu email (y tu nombre, si lo indicás) se envían
+                    a Meta en formato encriptado (hash) para mejorar la atribución de nuestras campañas
+                    publicitarias — Meta no recibe estos datos en texto plano. Podés
+                    consultar su política en{" "}
+                    <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-[#E8734A] underline">
+                        facebook.com/privacy/policy
+                    </a>. Si rechazás el aviso, el Meta Pixel no se carga en absoluto.
                 </p>
             </section>
 

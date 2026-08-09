@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { trackMetaEvent } from "../../lib/metaPixel";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdnowda";
 
@@ -25,6 +26,7 @@ const Contact = () => {
             if (res.ok) {
                 setStatus("success");
                 setForm({ name: "", email: "", message: "" });
+                trackMetaEvent("Lead");
             } else {
                 setStatus("error");
             }
@@ -48,6 +50,11 @@ const Contact = () => {
                 </p>
 
                 <form onSubmit={handleSubmit} className="relative flex flex-col gap-5">
+                    {/* Formspree reads this hidden field to set the email subject —
+                        makes the notification stand out in the inbox without needing
+                        a custom backend (Gmail ignores email "Importance" headers). */}
+                    <input type="hidden" name="_subject" value={`🔴 Nuevo lead — DivFlow: ${form.name || "sin nombre"}`} />
+
                     <div className="flex flex-col gap-2">
                         <label className="text-[#C9A68C] text-xs font-bold uppercase tracking-wide">Nombre</label>
                         <input

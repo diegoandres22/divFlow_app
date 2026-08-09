@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ClickIndicator from "./ClickIndicator";
+import { smoothScrollTo } from "../../lib/smoothScroll";
 
 const MapLink = () => {
     const [active, setActive] = useState(false);
@@ -20,7 +21,8 @@ const MapLink = () => {
             <ClickIndicator active={active} />
 
             <a
-                href="#"
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); smoothScrollTo("#contact"); }}
                 onMouseEnter={() => setActive(true)}
                 onMouseLeave={() => setActive(false)}
                 className="text-[#C9A68C] text-lg lg:text-[5vw] underline hover:text-[#F5F0EA]"
