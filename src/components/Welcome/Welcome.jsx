@@ -1,0 +1,66 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap/all";
+import { useMediaQuery } from "react-responsive";
+import { welcomeLinesLG, welcomeLinesSM } from "../../constants/welcome";
+import w1 from "../../assets/robot-1.jpg"
+import w2 from "../../assets/robot-2.jpg"
+
+const Welcome = () => {
+
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const welcomeLines = isMobile ? welcomeLinesSM : welcomeLinesLG;
+
+    useGSAP(() => {
+        const lines = gsap.utils.toArray(".clip-text-welcome");
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".welcome-section",
+                start: "top 75%",
+                end: "bottom 75%",
+                scrub: true,
+                // markers: true
+            },
+        });
+
+        lines.forEach((line) => {
+            tl.to(line, {
+                clipPath: "inset(0% 0% 0% 0%)",
+                ease: "none",
+                stagger: 0.2,
+                duration: 1,
+            });
+        });
+
+    });
+
+    return (
+        <div className='welcome-section w-full h-[120vh] text-[#1A120D]  md:px-7 px-6 '>
+            <div className='flex flex-col gap-2 tracking-[-4] leading-2'>
+                <div className="w-full md:w-[86%] md:text-[64px] text-[34px] welcome-line md:pt-20">
+                    <div className="w-full welcome-text flex flex-col justify-center items-start">
+                        {welcomeLines.map((text, index) => (
+                            <span key={index} className="relative block text-darkBrown md:tracking-[-0.010em] tracking-[0.015em]">
+                                {text}
+                                <span className="clip-text-welcome md:tracking-[-0.010em] tracking-[0.015em]">{text}</span>
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="flex md:flex-row flex-col justify-between items-center md:p-4 md:mt-20 mt-10">
+                <div className="flex flex-row justify-center items-center gap-1">
+                    <img src={w1} alt="DivFlow bot" loading="lazy" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
+                    <img src={w2} alt="DivFlow bot" loading="lazy" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
+                </div>
+                <div className="md:w-1/2 w-full md:mt-0 mt-10">
+                    <p className="md:text-[2rem] text-[1.4rem] text-[#C9A68C] md:leading-[1.1] md:pr-24 font-normal leading-[26px] tracking-[-0.2px]">
+                        <span>Software que se adapta a tu operación, no al revés.</span><br />
+                        <span>Automatizaciones que corren solas, todos los días.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Welcome;
