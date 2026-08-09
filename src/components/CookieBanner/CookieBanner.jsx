@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { initMetaPixel } from "../../lib/metaPixel";
+import { initGA4 } from "../../lib/ga4";
 
 const STORAGE_KEY = "divflow_cookie_consent";
 
@@ -9,9 +10,12 @@ const CookieBanner = () => {
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (!stored) setVisible(true);
-        // Returning visitor who already said yes — load the pixel without
-        // making them click "Aceptar" again.
-        if (stored === "accepted") initMetaPixel();
+        // Returning visitor who already said yes — load tracking scripts
+        // without making them click "Aceptar" again.
+        if (stored === "accepted") {
+            initMetaPixel();
+            initGA4();
+        }
     }, []);
 
     const handleChoice = (value) => {
@@ -19,7 +23,10 @@ const CookieBanner = () => {
         setVisible(false);
         // Only load tracking scripts on explicit "Aceptar" — never on
         // "Rechazar", and never before either button is clicked.
-        if (value === "accepted") initMetaPixel();
+        if (value === "accepted") {
+            initMetaPixel();
+            initGA4();
+        }
     };
 
     if (!visible) return null;

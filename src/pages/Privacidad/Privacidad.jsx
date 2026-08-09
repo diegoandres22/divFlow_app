@@ -86,11 +86,18 @@ const Privacidad = () => {
                     Facebook. Meta puede establecer sus propias cookies en tu navegador para esto. Además,
                     si completás el formulario de contacto, tu email (y tu nombre, si lo indicás) se envían
                     a Meta en formato encriptado (hash) para mejorar la atribución de nuestras campañas
-                    publicitarias — Meta no recibe estos datos en texto plano. Podés
-                    consultar su política en{" "}
+                    publicitarias — Meta no recibe estos datos en texto plano. También usamos{" "}
+                    <strong>Google Analytics</strong> para entender cómo se navega el sitio (páginas
+                    visitadas, tiempo de permanencia, dispositivo) de forma agregada, sin identificarte
+                    individualmente. Podés
+                    consultar sus políticas en{" "}
                     <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-[#E8734A] underline">
                         facebook.com/privacy/policy
-                    </a>. Si rechazás el aviso, el Meta Pixel no se carga en absoluto.
+                    </a>{" "}
+                    y{" "}
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E8734A] underline">
+                        policies.google.com/privacy
+                    </a>. Si rechazás el aviso, ninguna de estas herramientas se carga.
                 </p>
             </section>
 
