@@ -1,5 +1,5 @@
 import "./revbtn.css";
-import { smoothScrollTo } from "../../lib/smoothScroll";
+import { smoothScrollTo } from "@/lib/smoothScroll";
 
 const AnimateBtn = ({ btnName, href = "#" }) => {
     const isInPageAnchor = href.startsWith("#") && href.length > 1;

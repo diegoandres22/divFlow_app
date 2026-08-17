@@ -1,9 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
 import { useMediaQuery } from "react-responsive";
-import { welcomeLinesLG, welcomeLinesSM } from "../../constants/welcome";
-import w1 from "../../assets/robot-1.jpg"
-import w2 from "../../assets/robot-2.jpg"
+import { welcomeLinesLG, welcomeLinesSM } from "@/constants/welcome";
+import w1 from "@/assets/robot-1.jpg"
+import w2 from "@/assets/robot-2.jpg"
 
 const Welcome = () => {
 
@@ -34,7 +34,7 @@ const Welcome = () => {
     });
 
     return (
-        <div className='welcome-section w-full h-[120vh] text-[#1A120D]  md:px-7 px-6 '>
+        <div className='welcome-section w-full h-[120vh] text-surface  md:px-7 px-6 '>
             <div className='flex flex-col gap-2 tracking-[-4] leading-2'>
                 <div className="w-full md:w-[86%] md:text-[64px] text-[34px] welcome-line md:pt-20">
                     <div className="w-full welcome-text flex flex-col justify-center items-start">
@@ -53,7 +53,7 @@ const Welcome = () => {
                     <img src={w2} alt="DivFlow bot" loading="lazy" className="md:rounded-[8rem] rounded-[9rem] md:w-56 w-44 md:h-56 h-44 object-cover" />
                 </div>
                 <div className="md:w-1/2 w-full md:mt-0 mt-10">
-                    <p className="md:text-[2rem] text-[1.4rem] text-[#C9A68C] md:leading-[1.1] md:pr-24 font-normal leading-[26px] tracking-[-0.2px]">
+                    <p className="md:text-[2rem] text-[1.4rem] text-tan md:leading-[1.1] md:pr-24 font-normal leading-[26px] tracking-[-0.2px]">
                         <span>Software que se adapta a tu operación, no al revés.</span><br />
                         <span>Automatizaciones que corren solas, todos los días.</span>
                     </p>

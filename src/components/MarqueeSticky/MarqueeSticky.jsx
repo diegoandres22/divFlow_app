@@ -1,10 +1,10 @@
 // import './marqueesticky.css';
-import MarqueeText from "../Marquee/MarqueeText";
-import StickyCols from "../StickyCols/StickyCols";
+import MarqueeText from "@/components/Marquee/MarqueeText";
+import StickyCols from "@/components/StickyCols/StickyCols";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Brand from "../Buttons/Brand";
+import Brand from "@/components/Buttons/Brand";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +35,7 @@ const MarqueeSticky = () => {
         <section className=" w-full overflow-hidden">
             <div className="pin-con relative">
                 <div className="pl-8">
-                    <p className="text-[0.7rem] text-[#eae5dd] choose-subtitle">
+                    <p className="text-[0.7rem] text-cream-muted choose-subtitle">
                         ¿Querés conocer más sobre
                         <br />
                         los beneficios de—<Brand />®?

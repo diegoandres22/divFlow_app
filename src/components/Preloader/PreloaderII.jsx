@@ -81,7 +81,7 @@ export default function PreloaderII() {
                     "0.25"
                 )
                 .add(animateProgress(), "<")
-                .set(".preloader-progress", { backgroundClip: "var(--base-300)" })
+                .set(".preloader-progress", { backgroundClip: "var(--color-base-300)" })
                 .to(
                     splits.logoChars.chars,
                     {

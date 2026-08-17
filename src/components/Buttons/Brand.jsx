@@ -1,6 +1,6 @@
 const Brand = ({ className = "" }) => (
     <span className={className}>
-        <span className="font-mono text-[#E8734A]">&lt;div&gt;</span>Flow
+        <span className="font-mono text-accent-primary">&lt;div&gt;</span>Flow
     </span>
 );
 

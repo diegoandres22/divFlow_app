@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
-import banner from '../../assets/background3.jpg';
+import banner from '@/assets/background3.jpg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import ClickIndicator from '../MapLink/ClickIndicator';
-import Brand from '../Buttons/Brand';
-import { smoothScrollTo } from '../../lib/smoothScroll';
+import ClickIndicator from '@/components/MapLink/ClickIndicator';
+import Brand from '@/components/Buttons/Brand';
+import { smoothScrollTo } from '@/lib/smoothScroll';
 
 
 const FooterBanner = () => {
@@ -44,11 +44,11 @@ const FooterBanner = () => {
                     onClick={() => smoothScrollTo("#contact")}
                     ref={fbImgRef} src={banner} alt="" loading="lazy" className='w-full h-full object-cover cursor-pointer' />
 
-                <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-7xl lg:text-[10vw] font-bold text-[#F5F0EA] whitespace-nowrap'><Brand /></h1>
+                <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl sm:text-7xl lg:text-[10vw] font-bold text-cream whitespace-nowrap'><Brand /></h1>
                 <div className='absolute bottom-5 px-4 w-full'>
                     <div className="w-full h-auto flex md:flex-row flex-col md:justify-between md:items-end">
                         <h2
-                            className="text-start lg:mt-0 md:text-[#F5F0EA] text-[#C9A68C] text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
+                            className="text-start lg:mt-0 md:text-cream text-tan text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
                             style={{ textShadow: '2px 2px 4px #000' }}
                         >
                             <span>Empezá a</span>
@@ -57,7 +57,7 @@ const FooterBanner = () => {
                         </h2>
 
                         <p
-                            className="md:w-[20%] w-[80%] text-[#F5F0EA] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
+                            className="md:w-[20%] w-[80%] text-cream text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
                             style={{ textShadow: '2px 2px 4px #000' }}
                         >
                             Agendá una llamada y te mostramos cómo <Brand /> puede simplificar tu operación.

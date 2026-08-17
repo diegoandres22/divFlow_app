@@ -4,9 +4,9 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-import acImg1 from "../../assets/activities-1.jpg";
-import acImg2 from "../../assets/activities-2.jpg";
-import acImg3 from "../../assets/activities-3.jpg";
+import acImg1 from "@/assets/activities-1.jpg";
+import acImg2 from "@/assets/activities-2.jpg";
+import acImg3 from "@/assets/activities-3.jpg";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -75,7 +75,7 @@ const Showcase = () => {
             >
                 {/* Image 1 */}
                 <div className="relative flex-shrink-0 w-[85vw] lg:w-[80vw] h-full overflow-hidden snap-center">
-                    <div className="w-[80vw] lg:w-[77vw] absolute top-6 left-4 lg:top-10 lg:left-5 flex justify-between items-start text-[#F5F0EA]">
+                    <div className="w-[80vw] lg:w-[77vw] absolute top-6 left-4 lg:top-10 lg:left-5 flex justify-between items-start text-cream">
                         <h1 className="text-lg lg:text-3xl font-bold">CRM conectado<br /> a facturación</h1>
                         <p className="border-[1px] rounded-3xl px-2 py-1 text-center text-[0.7rem]">n8n</p>
                     </div>
@@ -86,17 +86,17 @@ const Showcase = () => {
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[80vw] lg:w-[77vw] absolute bottom-6 left-4 lg:bottom-10 lg:left-5 flex justify-between items-start ">
-                        <p className="text-[0.68rem] font-bold text-[#F5F0EA]">Cada venta cerrada genera la factura y actualiza el<br />stock automáticamente, sin intervención manual.</p>
+                        <p className="text-[0.68rem] font-bold text-cream">Cada venta cerrada genera la factura y actualiza el<br />stock automáticamente, sin intervención manual.</p>
                         <div className="flex justify-center items-center">
-                            <p className="text-[#F5F0EA] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">01</p>
-                            <p className="text-[#4e484e] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
+                            <p className="text-cream border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">01</p>
+                            <p className="text-gray-warm border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Image 2 */}
                 <div className="relative flex-shrink-0 w-[85vw] lg:w-[80vw] h-full overflow-hidden snap-center">
-                    <div className="w-[80vw] lg:w-[77vw] absolute top-6 left-4 lg:top-10 lg:left-5 flex justify-between items-start text-[#F5F0EA]">
+                    <div className="w-[80vw] lg:w-[77vw] absolute top-6 left-4 lg:top-10 lg:left-5 flex justify-between items-start text-cream">
                         <h1 className="text-lg lg:text-3xl font-bold">Soporte al<br />cliente 24/7</h1>
                         <p className="border-[1px] rounded-3xl px-2 py-1 text-center text-[0.7rem]">n8n + IA</p>
                     </div>
@@ -107,17 +107,17 @@ const Showcase = () => {
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[80vw] lg:w-[77vw] absolute bottom-6 left-4 lg:bottom-10 lg:left-5 flex justify-between items-start ">
-                        <p className="text-[0.68rem] font-bold text-[#F5F0EA]">Un bot clasifica consultas, responde las repetitivas y<br />escala al equipo humano solo cuando hace falta.</p>
+                        <p className="text-[0.68rem] font-bold text-cream">Un bot clasifica consultas, responde las repetitivas y<br />escala al equipo humano solo cuando hace falta.</p>
                         <div className="flex justify-center items-center">
-                            <p className="text-[#F5F0EA] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">02</p>
-                            <p className="text-[#4e484e] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
+                            <p className="text-cream border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">02</p>
+                            <p className="text-gray-warm border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Image 3 */}
                 <div className="relative flex-shrink-0 w-[85vw] lg:w-[80vw] h-full overflow-hidden snap-center">
-                    <div className="w-[80vw] lg:w-[77vw] absolute top-6 left-4 lg:top-10 lg:left-5 flex justify-between items-start text-[#F5F0EA]">
+                    <div className="w-[80vw] lg:w-[77vw] absolute top-6 left-4 lg:top-10 lg:left-5 flex justify-between items-start text-cream">
                         <h1 className="text-lg lg:text-3xl font-bold">Dashboard en<br />tiempo real</h1>
                         <p className="border-[1px] rounded-3xl px-2 py-1 text-center text-[0.7rem]">Full-stack</p>
                     </div>
@@ -128,10 +128,10 @@ const Showcase = () => {
                         className="image-item w-full h-full object-cover rounded-[2.5rem]"
                     />
                     <div className="w-[80vw] lg:w-[77vw] absolute bottom-6 left-4 lg:bottom-10 lg:left-5 flex justify-between items-start ">
-                        <p className="text-[0.68rem] font-bold text-[#F5F0EA]">Métricas de tu negocio centralizadas en un panel<br />propio, sin depender de hojas de cálculo dispersas.</p>
+                        <p className="text-[0.68rem] font-bold text-cream">Métricas de tu negocio centralizadas en un panel<br />propio, sin depender de hojas de cálculo dispersas.</p>
                         <div className="flex justify-center items-center">
-                            <p className="text-[#F5F0EA] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
-                            <p className="text-[#4e484e] border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
+                            <p className="text-cream border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
+                            <p className="text-gray-warm border-[1px] rounded-3xl px-[1vw] py-1 text-center text-[0.7rem]">03</p>
                         </div>
                     </div>
                 </div>
