@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './marqueetext.css';
-import Brand from '../Buttons/Brand';
+import Brand from '@/components/Buttons/Brand';
 
 const MarqueeText = () => {
     const animationRef = useRef(null);

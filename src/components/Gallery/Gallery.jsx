@@ -3,11 +3,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './gallery.css';
 import { BsFillPlusCircleFill } from "react-icons/bs";
-import Brand from "../Buttons/Brand";
+import Brand from "@/components/Buttons/Brand";
 
-import gbg1 from '../../assets/background1.jpg';
-import gbg2 from '../../assets/background2.jpg';
-import gbg3 from '../../assets/background3.jpg';
+import gbg1 from '@/assets/background1.jpg';
+import gbg2 from '@/assets/background2.jpg';
+import gbg3 from '@/assets/background3.jpg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -133,11 +133,11 @@ const Gallery = () => {
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
-                        <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
+                        <BsFillPlusCircleFill className='w-8 h-8 text-tan' />
                         <h3>Despertás, y tu pipeline ya creció solo <br /> mientras vos dormías</h3>
                     </div>
-                    <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
-                        <div className="progress-line absolute z-10 bg-[#E8734A] w-[33%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                    <div className="relative z-9 w-50 h-[0.1rem] bg-gray-warm">
+                        <div className="progress-line absolute z-10 bg-accent-primary w-[33%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                     </div>
                 </div>
             </div>
@@ -149,11 +149,11 @@ const Gallery = () => {
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
-                        <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
+                        <BsFillPlusCircleFill className='w-8 h-8 text-tan' />
                         <h3>Conectamos tus herramientas para que la información viaje <br /> sola entre sistemas, sin duplicados ni planillas manuales</h3>
                     </div>
-                    <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
-                        <div className="progress-line absolute z-10 bg-[#E8734A] w-[67%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                    <div className="relative z-9 w-50 h-[0.1rem] bg-gray-warm">
+                        <div className="progress-line absolute z-10 bg-accent-primary w-[67%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                     </div>
                 </div>
             </div>
@@ -165,11 +165,11 @@ const Gallery = () => {
                 </div>
                 <div className="gallery-bottomText">
                     <div className='w-full flex justify-center items-center gap-0'>
-                        <BsFillPlusCircleFill className='w-8 h-8 text-[#C9A68C]' />
+                        <BsFillPlusCircleFill className='w-8 h-8 text-tan' />
                         <h3>Tu producto, construido desde cero: dashboard, base de <br /> datos y lógica de negocio, listo para escalar</h3>
                     </div>
-                    <div className="relative z-9 w-50 h-[0.1rem] bg-[#4f4b48]">
-                        <div className="progress-line absolute z-10 bg-[#E8734A] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                    <div className="relative z-9 w-50 h-[0.1rem] bg-gray-warm">
+                        <div className="progress-line absolute z-10 bg-accent-primary w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                     </div>
                 </div>
             </div>

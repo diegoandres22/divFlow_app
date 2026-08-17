@@ -1,7 +1,7 @@
 import gsap from "gsap/all";
-import smoke from "../../assets/smoke_final.mp4";
-import robotHeroBg from "../../assets/robot-1.jpg"
-import Brand from "../Buttons/Brand";
+import smoke from "@/assets/smoke_final.mp4";
+import robotHeroBg from "@/assets/robot-1.jpg"
+import Brand from "@/components/Buttons/Brand";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 
@@ -38,7 +38,7 @@ const Hero = () => {
                     className="hero-img absolute inset-0 bg-no-repeat bg-cover bg-center z-0 lg:block hidden"
                     style={{ backgroundImage: `url(${robotHeroBg})` }}
                 />
-                <div className="hero-img absolute inset-0 bg-[#120D0A]/40 z-[1] lg:block hidden" />
+                <div className="hero-img absolute inset-0 bg-base-100/40 z-[1] lg:block hidden" />
 
                 {/* Smoke video (capa superior): siempre relativa a la tarjeta completa,
                     en todos los breakpoints */}
@@ -58,7 +58,7 @@ const Hero = () => {
                         y solo a partir de lg pasan a la composición absoluta original. */}
                     <div className="relative h-auto lg:h-dvh">
                         <h1
-                            className="text-[#F5F0EA] text-center lg:text-start text-6xl md:text-9xl font-bold tracking-wider mt-28 lg:mt-0 lg:absolute lg:left-2"
+                            className="text-cream text-center lg:text-start text-6xl md:text-9xl font-bold tracking-wider mt-28 lg:mt-0 lg:absolute lg:left-2"
                             style={{ textShadow: '2px 2px 4px #aaa' }}
                         >
                             <Brand />
@@ -66,7 +66,7 @@ const Hero = () => {
 
                         <div className="w-full h-auto relative lg:absolute mt-6 lg:mt-0 lg:bottom-[9%] flex lg:flex-row flex-col lg:justify-between lg:items-end">
                             <h2
-                                className="text-center lg:text-start lg:mt-0 md:text-[#F5F0EA] text-[#F0B08C] text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
+                                className="text-center lg:text-start lg:mt-0 md:text-cream text-accent-secondary text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
                                 style={{ textShadow: '2px 2px 4px #000' }}
                             >
                                 <span>Software a medida,</span>
@@ -75,7 +75,7 @@ const Hero = () => {
                             </h2>
 
                             <p
-                                className="md:w-[20%] w-[80%] mx-auto lg:mx-0 text-[#F5F0EA] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-center lg:text-justify"
+                                className="md:w-[20%] w-[80%] mx-auto lg:mx-0 text-cream text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-center lg:text-justify"
                                 style={{ textShadow: '2px 2px 4px #000' }}
                             >
                                 Construimos productos SaaS y flujos automatizados que hacen crecer tu operación sin fricción—<Brand />.

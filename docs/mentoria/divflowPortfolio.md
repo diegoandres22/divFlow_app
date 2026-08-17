@@ -100,3 +100,43 @@ En `src/index.css` hay variables CSS (`--base-100`, `--base-200`, `--base-300`, 
 ---
 
 **Pregunta de verificación:** si tuvieras que agregar una nueva sección a la landing (por ejemplo "Testimonios"), ¿en qué carpetas exactas crearías archivos, siguiendo el patrón que acabamos de ver, y por qué ahí?
+
+**Nota:** Diego pidió explicación menos técnica y con analogías — se retomó el módulo con ese enfoque. Se generó además un prompt para pegar en Claude Code que corrige los 3 hallazgos de este módulo (unificar nombre "Layouts", agregar alias de imports "@/", auditar y consolidar colores hardcodeados en un theme de Tailwind). Queda pendiente revisar el resultado cuando Diego confirme que Claude Code terminó.
+
+---
+
+## Módulo 3 — "Modelo de datos" y lógica de negocio
+
+No hay modelo de datos tradicional (sin DB, sin tablas). Lo único que existe es estado en memoria del navegador (`useState` en `Contact.jsx`), que se pierde al cerrar/recargar la página.
+
+Reglas de negocio reales encontradas:
+
+1. **Consentimiento de cookies** (`src/components/CookieBanner/CookieBanner.jsx`): al montar, lee `localStorage.getItem("divflow_cookie_consent")`. Si ya hay un valor guardado, no vuelve a mostrar el banner; si el valor es `"accepted"`, dispara `initMetaPixel()` e `initGA4()` automáticamente. Si el usuario nunca decidió, muestra el banner y solo activa tracking ante un click explícito en "Aceptar". Es una regla de cumplimiento legal (no solo UI): sin consentimiento, cero tracking.
+
+2. **Formulario de contacto** (`src/components/Contact/Contact.jsx`): el botón de enviar queda `disabled` hasta que el checkbox de "Acepto la Política de Privacidad" esté marcado, además de los campos `required`. Truco prolijo: un input oculto `_subject` arma el asunto del email que le llega a Diego para que el lead resalte en la bandeja, sin backend propio. Al enviar con éxito, dispara `trackMetaEvent("Lead")`.
+
+3. **Meta/título por página** (`src/lib/useDocumentMeta.js`): como es SPA sin SSR, cada página setea su propio `document.title` y meta description a mano vía `useEffect`, restaurando los valores por defecto al desmontar. Sin esto, todas las páginas compartirían el mismo título/descripción en buscadores y al compartir el link.
+
+**Verificación con Diego (correcta):** confirmó que si un visitante ya aceptó cookies y vuelve días después, el banner no reaparece porque `localStorage` ya tiene `"accepted"` guardado, y la app usa ese valor para activar GA4/Meta Pixel sin volver a preguntar.
+
+---
+
+## Módulo 4 — "Backend" e integraciones externas
+
+Verifiqué (grep de "n8n" en `src/`) que **no hay integración real de n8n en este repo** — todas las menciones son copy de marketing (Hero, Footer, Activities, etc.) describiendo el servicio de DivFlow como negocio, no una llamada real a un flujo de n8n. Este sitio no ejecuta ni consume ningún webhook de n8n.
+
+Los tres "backends" reales son servicios externos:
+
+- **Formspree** (cubierto en Módulo 3).
+- **GA4 y Meta Pixel** (`src/lib/ga4.js`, `src/lib/metaPixel.js`): comparten el mismo patrón — cargan su script externo dinámicamente con `document.createElement("script")` en vez de un `<script>` inline en el HTML. Motivo (se profundiza en Módulo 6): el CSP del sitio no permite scripts inline, solo scripts de un listado de orígenes de confianza.
+
+**Patrón de seguridad funcional compartido:** tanto `trackGA4Event` como `trackMetaEvent` chequean `if (window.gtag)` / `if (window.fbq)` antes de disparar el evento. Si el usuario rechazó cookies, esas funciones globales nunca existieron, y el track se vuelve un no-op silencioso en vez de romper la página. Esto permite llamar `trackMetaEvent("Lead")` en `Contact.jsx` sin verificar el consentimiento en ese punto — la función ya se protege sola. Diseño intencional, bien resuelto.
+
+**Qué se rompe si falla cada uno:** Formspree caído = formulario no envía (resto del sitio OK). GA4/Meta Pixel caídos = cero impacto funcional, solo se pierde tracking.
+
+**Verificación con las 3 correcciones de código (aplicadas por Claude Code, revisadas 2026-08-09, aún sin commitear):**
+- Carpeta `Layouts` duplicada → resuelta: `MarqueeSticky` movido a `src/components/MarqueeSticky/`.
+- Imports relativos → resuelto: alias `@` → `src/` en `vite.config.js` + `jsconfig.json` nuevo; 0 imports `../` restantes.
+- Colores hardcodeados → resuelto: bloque `@theme` en `src/index.css` con paleta completa nombrada (`--color-cream`, `--color-tan`, `--color-surface`, etc.); solo queda 1 hex hardcodeado en todo `src/` (antes eran cientos).
+
+**Verificación con Diego (correcta):** con cookies rechazadas, `window.fbq` nunca se crea (porque `initMetaPixel()` nunca corrió), así que `trackMetaEvent("Lead")` evalúa `if (window.fbq)` como falso y no hace nada — no-op silencioso, no rompe el envío del formulario.

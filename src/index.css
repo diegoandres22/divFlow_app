@@ -1,12 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
-:root {
-	--base-100: #120D0A;
-	--base-200: #1D140F;
-	--base-300: #F4F4F5;
-	--accent-primary: #E8734A;
-	--accent-secondary: #F0B08C;
+@theme {
+	/* Superficies oscuras */
+	--color-base-100: #120D0A;
+	--color-base-200: #1D140F;
+	--color-base-300: #F4F4F5;
+	--color-surface: #1A120D;
+	--color-line: #2a1f17;
+	--color-line-light: #c4c1b9;
+
+	/* Texto claro / cremas */
+	--color-cream: #F5F0EA;
+	--color-cream-muted: #eae5dd;
+	--color-cream-hover: #e0d8cd;
+	--color-tan: #C9A68C;
+	--color-tan-muted: #a79c8d;
+	--color-gray-warm: #4f4b48;
+
+	/* Acento de marca */
+	--color-accent-primary: #E8734A;
+	--color-accent-secondary: #F0B08C;
+	--color-accent-hover: #f08a63;
+
+	/* Estados */
+	--color-success: #9FE1CB;
+	--color-error: #E24B4A;
 }
 
 html,
@@ -38,7 +57,7 @@ body {
 }
 
 .preloader-progress {
-	background-color: var(--base-200);
+	background-color: var(--color-base-200);
 	z-index: 1;
 	will-change: opacity;
 }
@@ -50,7 +69,7 @@ body {
 	transform: translateX(-50%) scaleX(0);
 	width: 55%;
 	height: 100%;
-	background-color: var(--base-300);
+	background-color: var(--color-base-300);
 	transform-origin: left;
 	will-change: transform;
 }
@@ -67,15 +86,15 @@ body {
 
 .preloader-logo .logo-text {
 	position: relative;
-	color: var(--base-300);
+	color: var(--color-base-300);
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 1;
 }
 
 .preloader-mask {
-	background-color: var(--base-100);
-	mask: linear-gradient(var(--base-300), var(--base-300)), url("./../public/preloader-bg.svg") center/40% no-repeat;
+	background-color: var(--color-base-100);
+	mask: linear-gradient(var(--color-base-300), var(--color-base-300)), url("./../public/preloader-bg.svg") center/40% no-repeat;
 	-webkit-mask-composite: source-out;
 	mask-composite: subtract;
 	will-change: transform;
@@ -96,7 +115,7 @@ body {
 }
 
 .preloader-footer p {
-	color: var(--base-300);
+	color: var(--color-base-300);
 	opacity: 0.5;
 }
 
@@ -198,7 +217,7 @@ body {
 	}
 
 	.preloader-mask {
-		mask: linear-gradient(var(--base-300), var(--base-300)), url("./../public/preloader-bg.svg") center/90% no-repeat;
+		mask: linear-gradient(var(--color-base-300), var(--color-base-300)), url("./../public/preloader-bg.svg") center/90% no-repeat;
 		-webkit-mask-composite: source-out;
 		mask-composite: subtract;
 	}

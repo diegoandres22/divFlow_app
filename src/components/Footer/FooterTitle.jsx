@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import "./footertitle.css";
-import Brand from "../Buttons/Brand";
+import Brand from "@/components/Buttons/Brand";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -82,18 +82,18 @@ const FooterTitle = () => {
     }, { scope: ftConRef });
 
     return (
-        <section ref={ftConRef} className='relative z-1 w-screen h-[40vh] border-1 border-t-[#c4c1b9]'>
+        <section ref={ftConRef} className='relative z-1 w-screen h-[40vh] border-1 border-t-line-light'>
             {/* relative + z-10: .footer-title (below) is `position:absolute; z-index:2`,
                 so without its own stacking context this row sits under it and
                 the giant <div>Flow text eats the clicks meant for these links. */}
             <div className='relative z-10 w-full flex flex-col lg:flex-row lg:justify-between items-center gap-2 lg:gap-0 px-6 mt-8 text-center'>
-                <p className='text-[#C9A68C] text-[0.7rem]'>
+                <p className='text-tan text-[0.7rem]'>
                     © 2026 <Brand />. Todos los derechos reservados.
                 </p>
                 <div className='flex flex-wrap justify-center items-center gap-x-4 gap-y-1'>
-                    <Link to="/privacidad" className='text-[#C9A68C] hover:text-[#E8734A] text-[0.7rem] transition-colors duration-300'>Política de Privacidad</Link>
-                    <Link to="/terminos" className='text-[#C9A68C] hover:text-[#E8734A] text-[0.7rem] transition-colors duration-300'>Términos y Condiciones</Link>
-                    <Link to="/aviso-legal" className='text-[#C9A68C] hover:text-[#E8734A] text-[0.7rem] transition-colors duration-300'>Aviso Legal</Link>
+                    <Link to="/privacidad" className='text-tan hover:text-accent-primary text-[0.7rem] transition-colors duration-300'>Política de Privacidad</Link>
+                    <Link to="/terminos" className='text-tan hover:text-accent-primary text-[0.7rem] transition-colors duration-300'>Términos y Condiciones</Link>
+                    <Link to="/aviso-legal" className='text-tan hover:text-accent-primary text-[0.7rem] transition-colors duration-300'>Aviso Legal</Link>
                 </div>
             </div>
 

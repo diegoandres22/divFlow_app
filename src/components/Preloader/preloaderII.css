@@ -10,7 +10,7 @@
 }
 
 .preloader-progress {
-    background-color: var(--base-200);
+    background-color: var(--color-base-200);
     z-index: 1;
     will-change: transform;
 }
@@ -22,7 +22,7 @@
     transform: translateX(-50%) scaleX(0);
     width: 55%;
     height: 100%;
-    background-color: var(--base-300);
+    background-color: var(--color-base-300);
     transform-origin: left;
     will-change: transform;
 }
@@ -40,16 +40,16 @@
 
 .preloader-logo h1 {
     position: relative;
-    color: var(--base-300);
+    color: var(--color-base-300);
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 1;
 }
 
 .preloader-mask {
-    background-color: var(--base-100);
+    background-color: var(--color-base-100);
     mask:
-        linear-gradient(var(--base-300), var(--base-300)),
+        linear-gradient(var(--color-base-300), var(--color-base-300)),
         url("../../../public/preloader-bg.svg") center/40% no-repeat;
     mask-composite: subtract;
     will-change: transform;
@@ -70,7 +70,7 @@
 }
 
 .preloader-footer p {
-    color: var(--base-300);
+    color: var(--color-base-300);
     opacity: 0.5;
 }
 
