@@ -49,6 +49,22 @@ const apps = [
         highlighted: false,
         ctaLabel: "Cotizar mi automatización",
     },
+    {
+        name: "Plataforma de Rifas",
+        price: "USD 49",
+        period: "/ mes",
+        description: "Plataforma de rifas y sorteos online: publicación de sorteos activos y finalizados, participación de compradores y una sección de ganadores que da transparencia a cada edición.",
+        features: [
+            "Gestión de sorteos activos y finalizados",
+            "Participación de compradores integrada",
+            "Sección de ganadores para dar transparencia",
+            "Alta en menos de 48hs",
+            "Soporte y actualizaciones incluidas",
+        ],
+        highlighted: true,
+        ctaLabel: "Quiero alquilarla",
+        demoUrl: "https://patealaperola.vercel.app/",
+    },
 ];
 
 const Cards = () => {
